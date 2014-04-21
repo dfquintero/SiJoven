@@ -29,7 +29,7 @@
                         <img src="img/ico/user.png" />
                         <h2>Usuario</h2>
                         <p>...</p>
-                        <span id="seccionAll" class="ui-li-count">564</span>
+                        <span id="seccionAll" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
@@ -37,7 +37,7 @@
                         <img src="img/ico/ico_300.png" />
                         <h2>...</h2>
                         <p>...</p>
-                        <span id="seccionAll" class="ui-li-count">564</span>
+                        <span id="seccionAll" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
@@ -45,7 +45,7 @@
                         <img src="img/ico/1ico_ed.png" />
                         <h2>...</h2>
                         <p>...</p>
-                        <span id="seccionAll" class="ui-li-count">564</span>
+                        <span id="seccionAll" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
@@ -53,7 +53,7 @@
                         <img src="img/ico/2ico_emp.png" />
                         <h2>...</h2>
                         <p>...</p>
-                        <span id="seccionAll" class="ui-li-count">564</span>
+                        <span id="seccionAll" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
@@ -61,7 +61,7 @@
                         <img src="img/ico/3ico_pre.png" />
                         <h2>...</h2>
                         <p>...</p>
-                        <span id="seccionAll" class="ui-li-count">564</span>
+                        <span id="seccionAll" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
@@ -69,7 +69,7 @@
                         <img src="img/ico/4ico_rec.png" />
                         <h2>...</h2>
                         <p>...</p>
-                        <span id="seccionAll" class="ui-li-count">564</span>
+                        <span id="seccionAll" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
@@ -77,7 +77,7 @@
                         <img src="img/ico/5ico_vol.png" />
                         <h2>...</h2>
                         <p>...</p>
-                        <span id="seccionAll" class="ui-li-count">564</span>
+                        <span id="seccionAll" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
@@ -85,7 +85,7 @@
                         <img src="img/ico/6ico_des.png" />
                         <h2>...</h2>
                         <p>...</p>
-                        <span id="seccionAll" class="ui-li-count">564</span>
+                        <span id="seccionAll" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
@@ -93,15 +93,32 @@
                         <img src="img/ico/info.png" />
                         <h2>Acerca de</h2>
                         <p>...</p>
-                        <span id="seccionAll" class="ui-li-count">564</span>
+                        <span id="seccionAll" class="ui-li-count">...</span>
                     </a>
                 </li>
             </ul>
         </div>
     </div>
+    
     <div data-role="page" id="page2">
-        <div data-role="header" data-add-back-btn="true" data-position="fixed">
-            banner si Joven
+        <div data-role="header" data-position="fixed">
+            <a class="ui-btn ui-shadow ui-corner-all ui-icon-bullets ui-btn-icon-notext" href="#userpanel">Delete</a>
+            <h1>Todos los eventos</h1>
+            <a class="ui-btn ui-shadow ui-corner-all ui-icon-user ui-btn-icon-notext" href="#userpanel">Delete</a>
+
+        </div>
+        <div data-role="content">
+            <form class="ui-filterable" data-position="fixed">
+                <input id="filterBasic-input" data-type="search">
+            </form>
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#">Acura</a></li>
+                <li><a href="#">Audi</a></li>
+                <li><a href="#">BMW</a></li>
+                <li><a href="#">Cadillac</a></li>
+                <li><a href="#">Ferrari</a></li>
+            </ul>
+
         </div>
         <div data-role="footer" data-position="fixed" data-theme="b">
             <div data-role="navbar">
@@ -112,6 +129,113 @@
                 </ul>
             </div>
         </div>
+        <!--Panel Lateral-->
+
+        <!--NavPanel-->
+        <!--/NavPanel-->
+
+        <!--UserPanel-->
+        <div data-role="panel" id="userpanel" data-position="right" data-display="overlay" data-theme="b">
+            <h3>
+                Preferencias
+            </h3>
+            <div id="checkboxes1" data-role="fieldcontain" data-controltype="checkboxes">
+                <fieldset data-role="controlgroup" data-type="vertical">
+                    <h2>
+                        Intereses:
+                    </h2>
+                    <input name="Aprende y crece" id="checkbox1" type="checkbox">
+                    <label for="checkbox1">
+                        Aprende y crece
+                    </label>
+                    <input name="Des" id="checkbox3" type="checkbox">
+                    <label for="checkbox3">
+                        Descubre y trabaja
+                    </label>
+                    <input name="Informate" id="checkbox4" type="checkbox">
+                    <label for="checkbox4">
+                        Informate
+                    </label>
+                    <input id="checkbox5" type="checkbox">
+                    <label for="checkbox5">
+                        Diviertete
+                    </label>
+                    <input id="checkbox6" type="checkbox">
+                    <label for="checkbox6">
+                        Involucrate
+                    </label>
+                </fieldset>
+            </div>
+            <div data-role="fieldcontain" data-controltype="slider">
+                <h3 for="slider1">
+                    Edad:
+                </h3>
+                <input name="slider" id="slider1" type="range" min="0" max="38" value="20"
+                       data-highlight="false">
+            </div>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <h2>
+                        Ubicación
+                    </h2>
+                </div>
+                <div class="ui-block-b">
+                    <div data-role="fieldcontain" data-controltype="toggleswitch">
+                        <select name="toggleswitch2" id="toggleswitch2" data-role="slider" data-theme="">
+                            <option value="off">
+                                Off
+                            </option>
+                            <option value="on">
+                                On
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ui-block-a">
+                    <div data-role="fieldcontain" data-controltype="selectmenu">
+                        <h4 for="selectmenu3">
+                            Pais
+                        </h4>
+                        <select id="selectmenu3">
+                            <option value="option1">
+                                Selección
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ui-block-b">
+                    <div data-role="fieldcontain" data-controltype="selectmenu">
+                        <h4 for="selectmenu4">
+                            Depto/Ciudad
+                        </h4>
+                        <select id="selectmenu4">
+                            <option value="Seleccionar">
+                                Selección
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <input type="submit" value="Cancelar">
+                </div>
+                <div class="ui-block-b">
+                    <input type="submit" value="Guardar">
+                </div>
+            </div>
+        </div>
+        <!--/UserPanel-->
     </div>
+
+
+    <!-- Panel Lateral -->
+        <!-- Usuario -->
+        
+        <!-- Usuario -->
+        <!-- Navegación -->
+        <!-- Navegación -->
+    <!-- Panel Lateral -->
+
 </body>
 </html>
