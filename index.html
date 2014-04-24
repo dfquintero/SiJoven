@@ -10,10 +10,11 @@
     <title>SiJoven</title>
 </head>
 <body>
-    <div data-role="page" id="1">
+    <!--Menu Inicio-->
+    <div data-role="page" id="inicio" data-theme="b">
         <div data-role="header" data-position="fixed">
             <h1>
-                ola k ase
+                Si Joven Banner
             </h1>
         </div>
         <script src="src/jsonCount.js"></script>
@@ -25,66 +26,66 @@
                     </h1>
                 </li>
                 <li>
-                    <a href="#page2">
+                    <a href="#">
                         <img src="img/ico/user.png" />
                         <h2>Usuario</h2>
-                        <p>...</p>
+                        <p>Opciones Personalizadas</p>
                         <span id="seccionAll" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <img src="img/ico/ico_300.png" />
-                        <h2>...</h2>
-                        <p>...</p>
+                        <h2>Todo</h2>
+                        <p>Todas las actividades</p>
                         <span id="seccionAll" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <img src="img/ico/1ico_ed.png" />
-                        <h2>...</h2>
-                        <p>...</p>
+                        <img src="img/ico/1ico_edu.png" />
+                        <h2>Aprende y Crece</h2>
+                        <p>Educación y Becas</p>
                         <span id="seccionAll" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <img src="img/ico/2ico_emp.png" />
-                        <h2>...</h2>
-                        <p>...</p>
+                        <h2>Descubre y Trabaja</h2>
+                        <p>Empleo y emprendimiento</p>
                         <span id="seccionAll" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <img src="img/ico/3ico_pre.png" />
-                        <h2>...</h2>
-                        <p>...</p>
+                        <h2>Informate y Protégete</h2>
+                        <p>Prevención e Información</p>
                         <span id="seccionAll" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <img src="img/ico/4ico_rec.png" />
-                        <h2>...</h2>
-                        <p>...</p>
+                        <h2>Diviertete y Disfruta</h2>
+                        <p>Cultura y Recreación</p>
                         <span id="seccionAll" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <img src="img/ico/5ico_vol.png" />
-                        <h2>...</h2>
-                        <p>...</p>
+                        <h2>Involucrate y Ayuda</h2>
+                        <p>Voluntariado</p>
                         <span id="seccionAll" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <img src="img/ico/6ico_des.png" />
-                        <h2>...</h2>
-                        <p>...</p>
+                        <h2>Concursa y Gana</h2>
+                        <p>Desarrollo</p>
                         <span id="seccionAll" class="ui-li-count">...</span>
                     </a>
                 </li>
@@ -92,58 +93,112 @@
                     <a href="#">
                         <img src="img/ico/info.png" />
                         <h2>Acerca de</h2>
-                        <p>...</p>
-                        <span id="seccionAll" class="ui-li-count">...</span>
+                        <p>Información Importante</p>
                     </a>
                 </li>
             </ul>
         </div>
     </div>
-    
-    <div data-role="page" id="page2">
+    <!--Pagina2/Lista-->
+    <div data-role="page" id="lista">
+        <!--Lista-->
         <div data-role="header" data-position="fixed">
-            <a class="ui-btn ui-shadow ui-corner-all ui-icon-bullets ui-btn-icon-notext" href="#userpanel">Delete</a>
-            <h1>Todos los eventos</h1>
-            <a class="ui-btn ui-shadow ui-corner-all ui-icon-user ui-btn-icon-notext" href="#userpanel">Delete</a>
-
+            <a class="ui-btn ui-shadow ui-corner-all ui-icon-bullets ui-btn-icon-notext" href="#navpanel"></a>
+            <h1>Sí Joven Banner</h1>
+            <a class="ui-btn ui-shadow ui-corner-all ui-icon-gear ui-btn-icon-notext" href="#userpanel"></a>
         </div>
         <div data-role="content">
-            <form class="ui-filterable" data-position="fixed">
+            <form class="ui-filterable">
                 <input id="filterBasic-input" data-type="search">
             </form>
             <ul data-role="listview" data-inset="true">
-                <li><a href="#">Acura</a></li>
-                <li><a href="#">Audi</a></li>
-                <li><a href="#">BMW</a></li>
-                <li><a href="#">Cadillac</a></li>
-                <li><a href="#">Ferrari</a></li>
+                <li>
+                    <a href="#">
+                        <img src="img/ico/1ico_edu.png" />
+                        <h2>Titulo</h2>
+                        <p>descripcion</p>
+                        <span id="seccionAll" class="ui-li-count">...</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/ico/2ico_emp.png" />
+                        <h2>Titulo</h2>
+                        <p>descripcion</p>
+                        <span id="seccionAll" class="ui-li-count">...</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/ico/3ico_pre.png" />
+                        <h2>Titulo</h2>
+                        <p>descripcion</p>
+                        <span id="seccionAll" class="ui-li-count">...</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/ico/4ico_rec.png" />
+                        <h2>Titulo</h2>
+                        <p>descripcion</p>
+                        <span id="seccionAll" class="ui-li-count">...</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/ico/4ico_rec.png" />
+                        <h2>Titulo</h2>
+                        <p>descripcion</p>
+                        <span id="seccionAll" class="ui-li-count">...</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/ico/4ico_rec.png" />
+                        <h2>Titulo</h2>
+                        <p>descripcion</p>
+                        <span id="seccionAll" class="ui-li-count">...</span>
+                    </a>
+                </li>
             </ul>
 
         </div>
-        <div data-role="footer" data-position="fixed" data-theme="b">
+        <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
                 <ul>
-                    <li><a href="#educacion" data-icon="bars">Lista</a></li>
+                    <li><a href="#lista" data-icon="bars">Lista</a></li>
                     <li><a href="#calendario" data-icon="calendar">Calendario</a></li>
-                    <li><a href="#mapa" data-icon="location">Ubicación</a></li>
+                    <li><a href="#ubicacion" data-icon="location">Ubicación</a></li>
                 </ul>
             </div>
         </div>
-        <!--Panel Lateral-->
-
         <!--NavPanel-->
+        <div data-role="panel" id="navpanel" data-position="left" data-display="push">
+            <ul data-role="listview">
+                <li data-icon="delete"><a href="#" data-rel="close">Cerrar</a></li>
+                <li data-role="list-divider">Menú</li>
+                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-nosvg ui-icon-home ui-btn-icon-left " href="index.html">Volver al Inicio</a></li>
+                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-tou ui-btn-icon-left" href="#eventos">Todo</a></li>
+                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-1ico_edu ui-btn-icon-left" href="#educacion">Educación</a></li>
+                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-2emp ui-btn-icon-left" href="#empleo">Empleo Y Emprendimiento</a></li>
+                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-3prev ui-btn-icon-left" href="#prevencion">Prevención</a></li>
+                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-4rec ui-btn-icon-left" href="#cultura">Recreación y Tiempo Libre</a></li>
+                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-5des ui-btn-icon-left" href="#desarrollo">Desarrollo y Voluntariado</a></li>
+                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-6tra ui-btn-icon-left" href="#tramites">Tramites</a></li>
+            </ul>
+        </div>
         <!--/NavPanel-->
-
         <!--UserPanel-->
         <div data-role="panel" id="userpanel" data-position="right" data-display="overlay" data-theme="b">
-            <h3>
-                Preferencias
-            </h3>
+            <ul data-role="listview" data-position="fixed">
+                <li data-icon="delete"><a href="#" data-rel="close">Cerrar</a></li>
+                <li data-role="list-divider">Preferencias</li>
+            </ul>
             <div id="checkboxes1" data-role="fieldcontain" data-controltype="checkboxes">
                 <fieldset data-role="controlgroup" data-type="vertical">
-                    <h2>
+                    <h4>
                         Intereses:
-                    </h2>
+                    </h4>
                     <input name="Aprende y crece" id="checkbox1" type="checkbox">
                     <label for="checkbox1">
                         Aprende y crece
@@ -164,20 +219,23 @@
                     <label for="checkbox6">
                         Involucrate
                     </label>
+                    <input id="checkbox7" type="checkbox">
+                    <label for="checkbox7">
+                        Desarrolla
+                    </label>
                 </fieldset>
             </div>
             <div data-role="fieldcontain" data-controltype="slider">
-                <h3 for="slider1">
+                <h4 for="slider1">
                     Edad:
-                </h3>
-                <input name="slider" id="slider1" type="range" min="0" max="38" value="20"
-                       data-highlight="false">
+                </h4>
+                <input name="slider" id="slider1" type="range" min="14" max="38" value="14" data-highlight="true">
             </div>
             <div class="ui-grid-a">
                 <div class="ui-block-a">
-                    <h2>
+                    <h3>
                         Ubicación
-                    </h2>
+                    </h3>
                 </div>
                 <div class="ui-block-b">
                     <div data-role="fieldcontain" data-controltype="toggleswitch">
@@ -218,24 +276,387 @@
             </div>
             <div class="ui-grid-a">
                 <div class="ui-block-a">
-                    <input type="submit" value="Cancelar">
+                    <input type="submit" value="Cancelar" style="background-color:red">
                 </div>
                 <div class="ui-block-b">
-                    <input type="submit" value="Guardar">
+                    <input type="submit" value="Guardar" style="background-color:green">
+                </div>
+            </div>
+        </div>
+        <!--/UserPanel-->
+    </div>
+    <!--Pagina2/Calendario-->
+    <div data-role="page" id="calendario">
+        <!--Calendario-->
+        <div data-role="header" data-position="fixed">
+            <a class="ui-btn ui-shadow ui-corner-all ui-icon-bullets ui-btn-icon-notext" href="#navpanel"></a>
+            <h1>Sí Joven Banner</h1>
+            <a class="ui-btn ui-shadow ui-corner-all ui-icon-gear ui-btn-icon-notext" href="#userpanel"></a>
+        </div>
+        <div data-role="content">
+            <div data-role="collapsible-set">
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>
+                        Eventos Permanentes
+                    </h3>
+                    <ul data-role="listview" data-inset="false" data-divider-theme="b" >
+                        <li>
+                            <a href="#">
+                                <img src="img/ico/1ico_edu.png" />
+                                <h2>Titulo</h2>
+                                <p>descripcion</p>
+                                <span id="seccionAll" class="ui-li-count">...</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/ico/2ico_emp.png" />
+                                <h2>Titulo</h2>
+                                <p>descripcion</p>
+                                <span id="seccionAll" class="ui-li-count">...</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/ico/3ico_pre.png" />
+                                <h2>Titulo</h2>
+                                <p>descripcion</p>
+                                <span id="seccionAll" class="ui-li-count">...</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/ico/4ico_rec.png" />
+                                <h2>Titulo</h2>
+                                <p>descripcion</p>
+                                <span id="seccionAll" class="ui-li-count">...</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/ico/4ico_rec.png" />
+                                <h2>Titulo</h2>
+                                <p>descripcion</p>
+                                <span id="seccionAll" class="ui-li-count">...</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/ico/4ico_rec.png" />
+                                <h2>Titulo</h2>
+                                <p>descripcion</p>
+                                <span id="seccionAll" class="ui-li-count">...</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#lista" data-icon="bars">Lista</a></li>
+                    <li><a href="#calendario" data-icon="calendar">Calendario</a></li>
+                    <li><a href="#ubicacion" data-icon="location">Ubicación</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--Panel Lateral-->
+        <!--NavPanel-->
+        <div data-role="panel" id="navpanel" data-position="left" data-display="push">
+            <ul data-role="listview">
+                <li data-icon="delete"><a href="#" data-rel="close">Cerrar</a></li>
+                <li data-role="list-divider">Menú</li>
+                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-nosvg ui-icon-home ui-btn-icon-left " href="index.html">Volver al Inicio</a></li>
+                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-tou ui-btn-icon-left" href="#eventos">Todo</a></li>
+                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-1ico_edu ui-btn-icon-left" href="#educacion">Educación</a></li>
+                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-2emp ui-btn-icon-left" href="#empleo">Empleo Y Emprendimiento</a></li>
+                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-3prev ui-btn-icon-left" href="#prevencion">Prevención</a></li>
+                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-4rec ui-btn-icon-left" href="#cultura">Recreación y Tiempo Libre</a></li>
+                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-5des ui-btn-icon-left" href="#desarrollo">Desarrollo y Voluntariado</a></li>
+                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-6tra ui-btn-icon-left" href="#tramites">Tramites</a></li>
+            </ul>
+        </div>
+        <!--/NavPanel-->
+        <!--UserPanel-->
+        <div data-role="panel" id="userpanel" data-position="right" data-display="overlay" data-theme="b">
+            <ul data-role="listview" data-position="fixed">
+                <li data-icon="delete"><a href="#" data-rel="close">Cerrar</a></li>
+                <li data-role="list-divider">Preferencias</li>
+            </ul>
+            <div id="checkboxes1" data-role="fieldcontain" data-controltype="checkboxes">
+                <fieldset data-role="controlgroup" data-type="vertical">
+                    <h4>
+                        Intereses:
+                    </h4>
+                    <input name="Aprende y crece" id="checkbox1" type="checkbox">
+                    <label for="checkbox1">
+                        Aprende y crece
+                    </label>
+                    <input name="Des" id="checkbox3" type="checkbox">
+                    <label for="checkbox3">
+                        Descubre y trabaja
+                    </label>
+                    <input name="Informate" id="checkbox4" type="checkbox">
+                    <label for="checkbox4">
+                        Informate
+                    </label>
+                    <input id="checkbox5" type="checkbox">
+                    <label for="checkbox5">
+                        Diviertete
+                    </label>
+                    <input id="checkbox6" type="checkbox">
+                    <label for="checkbox6">
+                        Involucrate
+                    </label>
+                    <input id="checkbox7" type="checkbox">
+                    <label for="checkbox7">
+                        Desarrolla
+                    </label>
+                </fieldset>
+            </div>
+            <div data-role="fieldcontain" data-controltype="slider">
+                <h4 for="slider1">
+                    Edad:
+                </h4>
+                <input name="slider" id="slider1" type="range" min="14" max="38" value="14" data-highlight="true">
+            </div>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <h3>
+                        Ubicación
+                    </h3>
+                </div>
+                <div class="ui-block-b">
+                    <div data-role="fieldcontain" data-controltype="toggleswitch">
+                        <select name="toggleswitch2" id="toggleswitch2" data-role="slider" data-theme="">
+                            <option value="off">
+                                Off
+                            </option>
+                            <option value="on">
+                                On
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ui-block-a">
+                    <div data-role="fieldcontain" data-controltype="selectmenu">
+                        <h4 for="selectmenu3">
+                            Pais
+                        </h4>
+                        <select id="selectmenu3">
+                            <option value="option1">
+                                Selección
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ui-block-b">
+                    <div data-role="fieldcontain" data-controltype="selectmenu">
+                        <h4 for="selectmenu4">
+                            Depto/Ciudad
+                        </h4>
+                        <select id="selectmenu4">
+                            <option value="Seleccionar">
+                                Selección
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <input type="submit" value="Cancelar" style="background-color:red">
+                </div>
+                <div class="ui-block-b">
+                    <input type="submit" value="Guardar" style="background-color:green">
+                </div>
+            </div>
+        </div>
+        <!--/UserPanel-->
+    </div>
+    <!--Pagina2/Ubicacion-->
+    <div data-role="page" id="ubicacion">
+        <!--Ubicación-->
+        <div data-role="header" data-position="fixed">
+            <a class="ui-btn ui-shadow ui-corner-all ui-icon-bullets ui-btn-icon-notext" href="#navpanel"></a>
+            <h1>Sí Joven Banner</h1>
+            <a class="ui-btn ui-shadow ui-corner-all ui-icon-gear ui-btn-icon-notext" href="#userpanel"></a>
+        </div>
+        <div data-role="content">
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <h3>
+                        Ubicación
+                    </h3>
+                </div>
+                <div class="ui-block-b">
+                    <div data-role="fieldcontain" data-controltype="toggleswitch">
+                        <select name="toggleswitch2" id="toggleswitch2" data-role="slider" data-theme="">
+                            <option value="off">
+                                Off
+                            </option>
+                            <option value="on">
+                                On
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ui-block-a">
+                    <div data-role="fieldcontain" data-controltype="selectmenu">
+                        <h4 for="selectmenu3">
+                            Pais
+                        </h4>
+                        <select id="selectmenu3">
+                            <option value="option1">
+                                Selección
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ui-block-b">
+                    <div data-role="fieldcontain" data-controltype="selectmenu">
+                        <h4 for="selectmenu4">
+                            Depto/Ciudad
+                        </h4>
+                        <select id="selectmenu4">
+                            <option value="Seleccionar">
+                                Selección
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#lista" data-icon="bars">Lista</a></li>
+                    <li><a href="#calendario" data-icon="calendar">Calendario</a></li>
+                    <li><a href="#ubicacion" data-icon="location">Ubicación</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--Panel Lateral-->
+        <!--NavPanel-->
+        <div data-role="panel" id="navpanel" data-position="left" data-display="push">
+            <ul data-role="listview">
+                <li data-icon="delete"><a href="#" data-rel="close">Cerrar</a></li>
+                <li data-role="list-divider">Menú</li>
+                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-nosvg ui-icon-home ui-btn-icon-left " href="index.html">Volver al Inicio</a></li>
+                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-tou ui-btn-icon-left" href="#eventos">Todo</a></li>
+                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-1ico_edu ui-btn-icon-left" href="#educacion">Educación</a></li>
+                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-2emp ui-btn-icon-left" href="#empleo">Empleo Y Emprendimiento</a></li>
+                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-3prev ui-btn-icon-left" href="#prevencion">Prevención</a></li>
+                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-4rec ui-btn-icon-left" href="#cultura">Recreación y Tiempo Libre</a></li>
+                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-5des ui-btn-icon-left" href="#desarrollo">Desarrollo y Voluntariado</a></li>
+                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-6tra ui-btn-icon-left" href="#tramites">Tramites</a></li>
+            </ul>
+        </div>
+        <!--/NavPanel-->
+        <!--UserPanel-->
+        <div data-role="panel" id="userpanel" data-position="right" data-display="overlay" data-theme="b">
+            <ul data-role="listview" data-position="fixed">
+                <li data-icon="delete"><a href="#" data-rel="close">Cerrar</a></li>
+                <li data-role="list-divider">Preferencias</li>
+            </ul>
+            <div id="checkboxes1" data-role="fieldcontain" data-controltype="checkboxes">
+                <fieldset data-role="controlgroup" data-type="vertical">
+                    <h4>
+                        Intereses:
+                    </h4>
+                    <input name="Aprende y crece" id="checkbox1" type="checkbox">
+                    <label for="checkbox1">
+                        Aprende y crece
+                    </label>
+                    <input name="Des" id="checkbox3" type="checkbox">
+                    <label for="checkbox3">
+                        Descubre y trabaja
+                    </label>
+                    <input name="Informate" id="checkbox4" type="checkbox">
+                    <label for="checkbox4">
+                        Informate
+                    </label>
+                    <input id="checkbox5" type="checkbox">
+                    <label for="checkbox5">
+                        Diviertete
+                    </label>
+                    <input id="checkbox6" type="checkbox">
+                    <label for="checkbox6">
+                        Involucrate
+                    </label>
+                    <input id="checkbox7" type="checkbox">
+                    <label for="checkbox7">
+                        Desarrolla
+                    </label>
+                </fieldset>
+            </div>
+            <div data-role="fieldcontain" data-controltype="slider">
+                <h4 for="slider1">
+                    Edad:
+                </h4>
+                <input name="slider" id="slider1" type="range" min="14" max="38" value="14" data-highlight="true">
+            </div>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <h3>
+                        Ubicación
+                    </h3>
+                </div>
+                <div class="ui-block-b">
+                    <div data-role="fieldcontain" data-controltype="toggleswitch">
+                        <select name="toggleswitch2" id="toggleswitch2" data-role="slider" data-theme="">
+                            <option value="off">
+                                Off
+                            </option>
+                            <option value="on">
+                                On
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ui-block-a">
+                    <div data-role="fieldcontain" data-controltype="selectmenu">
+                        <h4 for="selectmenu3">
+                            Pais
+                        </h4>
+                        <select id="selectmenu3">
+                            <option value="option1">
+                                Selección
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ui-block-b">
+                    <div data-role="fieldcontain" data-controltype="selectmenu">
+                        <h4 for="selectmenu4">
+                            Depto/Ciudad
+                        </h4>
+                        <select id="selectmenu4">
+                            <option value="Seleccionar">
+                                Selección
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <input type="submit" value="Cancelar" style="background-color:red">
+                </div>
+                <div class="ui-block-b">
+                    <input type="submit" value="Guardar" style="background-color:green">
                 </div>
             </div>
         </div>
         <!--/UserPanel-->
     </div>
 
-
     <!-- Panel Lateral -->
-        <!-- Usuario -->
-        
-        <!-- Usuario -->
-        <!-- Navegación -->
-        <!-- Navegación -->
+    <!-- Usuario -->
+    <!-- Usuario -->
+    <!-- Navegación -->
+    <!-- Navegación -->
     <!-- Panel Lateral -->
-
 </body>
 </html>
