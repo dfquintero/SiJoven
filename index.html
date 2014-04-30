@@ -11,15 +11,15 @@
 </head>
 <body>
     <!--Menu Inicio-->
-    <div data-role="page" id="inicio" data-theme="b">
+    <div data-role="page" id="inicio">
         <div data-role="header" data-position="fixed">
-            <h1>
-                Si Joven Banner
-            </h1>
+                <center>
+                    <img width="50%" src="img/icon-sijoven.png" />
+                </center>
+            <a class="ui-btn-right ui-btn ui-shadow ui-corner-all ui-icon-gear ui-btn-icon-top ui-alt-icon" href="#userpanel">Mi Sí Joven</a>            
         </div>
-        <script src="src/jsonCount.js"></script>
         <div data-role="content" id="seccionContent">
-            <ul data-role="listview" data-inset="true" id="seccionContent">
+            <ul data-role="listview" data-inset="true" id="seccionContent" data-theme="b" class="ui-nodisc-icon">
                 <li data-role="list-divider">
                     <h1>
                         ¿Que estas buscado hoy?
@@ -28,7 +28,7 @@
                 <li>
                     <a href="#lista">
                         <img src="img/ico/user.png" />
-                        <h2>Usuario</h2>
+                        <h2>Mi Sí Joven</h2>
                         <p>Opciones Personalizadas</p>
                         <span id="seccionAll" class="ui-li-count">...</span>
                     </a>
@@ -60,7 +60,7 @@
                 <li>
                     <a href="#">
                         <img src="img/ico/3ico_pre.png" />
-                        <h2>Informate y Protégete</h2>
+                        <h2>Cuídate y Denuncia</h2>
                         <p>Prevención e Información</p>
                         <span id="seccionAll" class="ui-li-count">...</span>
                     </a>
@@ -68,7 +68,7 @@
                 <li>
                     <a href="#">
                         <img src="img/ico/4ico_rec.png" />
-                        <h2>Diviertete y Disfruta</h2>
+                        <h2>Diviértete y Disfruta</h2>
                         <p>Cultura y Recreación</p>
                         <span id="seccionAll" class="ui-li-count">...</span>
                     </a>
@@ -76,7 +76,7 @@
                 <li>
                     <a href="#">
                         <img src="img/ico/5ico_vol.png" />
-                        <h2>Involucrate y Ayuda</h2>
+                        <h2>Involúcrate y Ayuda</h2>
                         <p>Voluntariado</p>
                         <span id="seccionAll" class="ui-li-count">...</span>
                     </a>
@@ -84,7 +84,7 @@
                 <li>
                     <a href="#">
                         <img src="img/ico/6ico_des.png" />
-                        <h2>Concursa y Gana</h2>
+                        <h2>Anímate y Participa</h2>
                         <p>Desarrollo</p>
                         <span id="seccionAll" class="ui-li-count">...</span>
                     </a>
@@ -98,20 +98,115 @@
                 </li>
             </ul>
         </div>
+        <!--UserPanel-->
+        <div data-role="panel" id="userpanel" data-position="right" data-display="overlay" data-theme="b">
+            <ul data-role="listview" data-position="fixed">
+                <li data-icon="delete"><a href="#" data-rel="close">Cerrar</a></li>
+                <li data-role="list-divider">Preferencias</li>
+            </ul>
+            <div id="checkboxes1" data-role="fieldcontain" data-controltype="checkboxes">
+                <fieldset data-role="controlgroup" data-type="vertical">
+                    <h4>
+                        Intereses:
+                    </h4>
+                    <input name="Aprende y crece" id="checkbox1" type="checkbox">
+                    <label for="checkbox1">
+                        Aprende y Crece
+                    </label>
+                    <input name="Des" id="checkbox3" type="checkbox">
+                    <label for="checkbox3">
+                        Descubre y Trabaja
+                    </label>
+                    <input name="Informate" id="checkbox4" type="checkbox">
+                    <label for="checkbox4">
+                        Cuídate y Denuncia
+                    </label>
+                    <input id="checkbox5" type="checkbox">
+                    <label for="checkbox5">
+                        Diviértete y Disfruta
+                    </label>
+                    <input id="checkbox6" type="checkbox">
+                    <label for="checkbox6">
+                        Involúcrate y Ayuda
+                    </label>
+                    <input id="checkbox7" type="checkbox">
+                    <label for="checkbox7">
+                        Anímate y Participa
+                    </label>
+                </fieldset>
+            </div>
+            <div data-role="fieldcontain" data-controltype="slider">
+                <h4 for="slider1">
+                    Edad:
+                </h4>
+                <input name="slider" id="slider1" type="range" min="14" max="38" value="14" data-highlight="true">
+            </div>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <h4>
+                        Ubicación:
+                    </h4>
+                </div>
+                <div class="ui-block-b">
+                    <div data-role="fieldcontain" data-controltype="toggleswitch">
+                        <select name="toggleswitch4" id="toggleswitch4" data-role="slider" data-theme=""
+                                data-mini="true">
+                            <option value="off">
+                                Off
+                            </option>
+                            <option value="on">
+                                On
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div data-role="fieldcontain" data-controltype="selectmenu">
+                <label for="selectmenu4">
+                    País:
+                </label>
+                <select id="selectmenu4" data-mini="true">
+                    <option value="option1">
+                        Option 1
+                    </option>
+                </select>
+            </div>
+            <div data-role="fieldcontain" data-controltype="selectmenu">
+                <label for="selectmenu7">
+                    Depto.:
+                </label>
+                <select id="selectmenu7" data-mini="true">
+                    <option value="option1">
+                        Option 1
+                    </option>
+                </select>
+            </div>
+            <div data-role="fieldcontain" data-controltype="selectmenu">
+                <label for="selectmenu8">
+                    Ciudad:
+                </label>
+                <select id="selectmenu8" data-mini="true">
+                    <option value="option1">
+                        Option 1
+                    </option>
+                </select>
+            </div>
+        </div>
     </div>
     <!--Pagina2/Lista-->
     <div data-role="page" id="lista">
         <!--Lista-->
         <div data-role="header" data-position="fixed">
             <a class="ui-btn ui-shadow ui-corner-all ui-icon-bullets ui-btn-icon-notext" href="#navpanel"></a>
-            <h1>Sí Joven Banner</h1>
-            <a class="ui-btn ui-shadow ui-corner-all ui-icon-gear ui-btn-icon-notext" href="#userpanel"></a>
+            <center>
+                <img width="50%" src="img/icon-sijoven.png" />
+            </center>
         </div>
         <div data-role="content">
             <form class="ui-filterable">
                 <input id="filterBasic-input" data-type="search">
             </form>
-            <ul data-role="listview" data-inset="true">
+            <ul data-role="listview" data-inset="true" class="ui-nodisc-icon ui-alt-icon" data-icon="plus">
                 <li>
                     <a href="#">
                         <img src="img/ico/1ico_edu.png" />
@@ -165,10 +260,11 @@
         </div>
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
-                <ul>
-                    <li><a href="#lista" data-icon="bars">Lista</a></li>
-                    <li><a href="#calendario" data-icon="calendar">Calendario</a></li>
-                    <li><a href="#ubicacion" data-icon="location">Ubicación</a></li>
+                <ul class="ui-nodisc-icon">
+                    <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
+                    <li><a href="#lista" data-icon="bars" class="ui-alt-icon ui-btn-active">Lista</a></li>
+                    <li><a href="#calendario" data-icon="calendar" class="ui-alt-icon">Calendario</a></li>
+                    <li><a href="#ubicacion" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
                 </ul>
             </div>
         </div>
@@ -188,118 +284,23 @@
             </ul>
         </div>
         <!--/NavPanel-->
-        <!--UserPanel-->
-        <div data-role="panel" id="userpanel" data-position="right" data-display="overlay" data-theme="b">
-            <ul data-role="listview" data-position="fixed">
-                <li data-icon="delete"><a href="#" data-rel="close">Cerrar</a></li>
-                <li data-role="list-divider">Preferencias</li>
-            </ul>
-            <div id="checkboxes1" data-role="fieldcontain" data-controltype="checkboxes">
-                <fieldset data-role="controlgroup" data-type="vertical">
-                    <h4>
-                        Intereses:
-                    </h4>
-                    <input name="Aprende y crece" id="checkbox1" type="checkbox">
-                    <label for="checkbox1">
-                        Aprende y crece
-                    </label>
-                    <input name="Des" id="checkbox3" type="checkbox">
-                    <label for="checkbox3">
-                        Descubre y trabaja
-                    </label>
-                    <input name="Informate" id="checkbox4" type="checkbox">
-                    <label for="checkbox4">
-                        Informate
-                    </label>
-                    <input id="checkbox5" type="checkbox">
-                    <label for="checkbox5">
-                        Diviertete
-                    </label>
-                    <input id="checkbox6" type="checkbox">
-                    <label for="checkbox6">
-                        Involucrate
-                    </label>
-                    <input id="checkbox7" type="checkbox">
-                    <label for="checkbox7">
-                        Desarrolla
-                    </label>
-                </fieldset>
-            </div>
-            <div data-role="fieldcontain" data-controltype="slider">
-                <h4 for="slider1">
-                    Edad:
-                </h4>
-                <input name="slider" id="slider1" type="range" min="14" max="38" value="14" data-highlight="true">
-            </div>
-            <div class="ui-grid-a">
-                <div class="ui-block-a">
-                    <h3>
-                        Ubicación
-                    </h3>
-                </div>
-                <div class="ui-block-b">
-                    <div data-role="fieldcontain" data-controltype="toggleswitch">
-                        <select name="toggleswitch2" id="toggleswitch2" data-role="slider" data-theme="">
-                            <option value="off">
-                                Off
-                            </option>
-                            <option value="on">
-                                On
-                            </option>
-                        </select>
-                    </div>
-                </div>
-                <div class="ui-block-a">
-                    <div data-role="fieldcontain" data-controltype="selectmenu">
-                        <h4 for="selectmenu3">
-                            Pais
-                        </h4>
-                        <select id="selectmenu3">
-                            <option value="option1">
-                                Selección
-                            </option>
-                        </select>
-                    </div>
-                </div>
-                <div class="ui-block-b">
-                    <div data-role="fieldcontain" data-controltype="selectmenu">
-                        <h4 for="selectmenu4">
-                            Depto/Ciudad
-                        </h4>
-                        <select id="selectmenu4">
-                            <option value="Seleccionar">
-                                Selección
-                            </option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="ui-grid-a">
-                <div class="ui-block-a">
-                    <input type="submit" value="Cancelar" style="background-color:red">
-                </div>
-                <div class="ui-block-b">
-                    <input type="submit" value="Guardar" style="background-color:green">
-                </div>
-            </div>
-        </div>
-        <!--/UserPanel-->
     </div>
     <!--Pagina2/Calendario-->
     <div data-role="page" id="calendario">
         <!--Calendario-->
         <div data-role="header" data-position="fixed">
             <a class="ui-btn ui-shadow ui-corner-all ui-icon-bullets ui-btn-icon-notext" href="#navpanel"></a>
-            <h1>Sí Joven Banner</h1>
-            <a class="ui-btn ui-shadow ui-corner-all ui-icon-gear ui-btn-icon-notext" href="#userpanel"></a>
+            <center>
+                <img width="50%" src="img/icon-sijoven.png" />
+            </center>
         </div>
         <div data-role="content">
-            <div data-role="collapsible-set">
+            <div data-role="collapsible-set" class="ui-nodisc-icon ui-alt-icon">
                 <div data-role="collapsible" data-collapsed="true">
                     <h3>
                         Eventos Permanentes
                     </h3>
-                    <ul data-role="listview" data-inset="false" data-divider-theme="b" >
+                    <ul data-role="listview" data-inset="false" data-divider-theme="b">
                         <li>
                             <a href="#">
                                 <img src="img/ico/1ico_edu.png" />
@@ -354,10 +355,11 @@
         </div>
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
-                <ul>
-                    <li><a href="#lista" data-icon="bars">Lista</a></li>
-                    <li><a href="#calendario" data-icon="calendar">Calendario</a></li>
-                    <li><a href="#ubicacion" data-icon="location">Ubicación</a></li>
+                <ul class="ui-nodisc-icon">
+                    <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
+                    <li><a href="#lista" data-icon="bars" class="ui-alt-icon">Lista</a></li>
+                    <li><a href="#calendario" data-icon="calendar" class="ui-alt-icon ui-btn-active">Calendario</a></li>
+                    <li><a href="#ubicacion" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
                 </ul>
             </div>
         </div>
@@ -378,150 +380,50 @@
             </ul>
         </div>
         <!--/NavPanel-->
-        <!--UserPanel-->
-        <div data-role="panel" id="userpanel" data-position="right" data-display="overlay" data-theme="b">
-            <ul data-role="listview" data-position="fixed">
-                <li data-icon="delete"><a href="#" data-rel="close">Cerrar</a></li>
-                <li data-role="list-divider">Preferencias</li>
-            </ul>
-            <div id="checkboxes1" data-role="fieldcontain" data-controltype="checkboxes">
-                <fieldset data-role="controlgroup" data-type="vertical">
-                    <h4>
-                        Intereses:
-                    </h4>
-                    <input name="Aprende y crece" id="checkbox1" type="checkbox">
-                    <label for="checkbox1">
-                        Aprende y crece
-                    </label>
-                    <input name="Des" id="checkbox3" type="checkbox">
-                    <label for="checkbox3">
-                        Descubre y trabaja
-                    </label>
-                    <input name="Informate" id="checkbox4" type="checkbox">
-                    <label for="checkbox4">
-                        Informate
-                    </label>
-                    <input id="checkbox5" type="checkbox">
-                    <label for="checkbox5">
-                        Diviertete
-                    </label>
-                    <input id="checkbox6" type="checkbox">
-                    <label for="checkbox6">
-                        Involucrate
-                    </label>
-                    <input id="checkbox7" type="checkbox">
-                    <label for="checkbox7">
-                        Desarrolla
-                    </label>
-                </fieldset>
-            </div>
-            <div data-role="fieldcontain" data-controltype="slider">
-                <h4 for="slider1">
-                    Edad:
-                </h4>
-                <input name="slider" id="slider1" type="range" min="14" max="38" value="14" data-highlight="true">
-            </div>
-            <div class="ui-grid-a">
-                <div class="ui-block-a">
-                    <h3>
-                        Ubicación
-                    </h3>
-                </div>
-                <div class="ui-block-b">
-                    <div data-role="fieldcontain" data-controltype="toggleswitch">
-                        <select name="toggleswitch2" id="toggleswitch2" data-role="slider" data-theme="">
-                            <option value="off">
-                                Off
-                            </option>
-                            <option value="on">
-                                On
-                            </option>
-                        </select>
-                    </div>
-                </div>
-                <div class="ui-block-a">
-                    <div data-role="fieldcontain" data-controltype="selectmenu">
-                        <h4 for="selectmenu3">
-                            Pais
-                        </h4>
-                        <select id="selectmenu3">
-                            <option value="option1">
-                                Selección
-                            </option>
-                        </select>
-                    </div>
-                </div>
-                <div class="ui-block-b">
-                    <div data-role="fieldcontain" data-controltype="selectmenu">
-                        <h4 for="selectmenu4">
-                            Depto/Ciudad
-                        </h4>
-                        <select id="selectmenu4">
-                            <option value="Seleccionar">
-                                Selección
-                            </option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="ui-grid-a">
-                <div class="ui-block-a">
-                    <input type="submit" value="Cancelar" style="background-color:red">
-                </div>
-                <div class="ui-block-b">
-                    <input type="submit" value="Guardar" style="background-color:green">
-                </div>
-            </div>
-        </div>
-        <!--/UserPanel-->
     </div>
     <!--Pagina2/Ubicacion-->
     <div data-role="page" id="ubicacion">
         <!--Ubicación-->
         <div data-role="header" data-position="fixed">
             <a class="ui-btn ui-shadow ui-corner-all ui-icon-bullets ui-btn-icon-notext" href="#navpanel"></a>
-            <h1>Sí Joven Banner</h1>
-            <a class="ui-btn ui-shadow ui-corner-all ui-icon-gear ui-btn-icon-notext" href="#userpanel"></a>
+            <center>
+                <img width="50%" src="img/icon-sijoven.png" />
+            </center>
         </div>
         <div data-role="content">
-            <div class="ui-grid-a">
-                <div class="ui-block-a">
-                    <h3>
-                        Ubicación
-                    </h3>
-                </div>
-                <div class="ui-block-b">
-                    <div data-role="fieldcontain" data-controltype="toggleswitch">
-                        <select name="toggleswitch2" id="toggleswitch2" data-role="slider" data-theme="">
-                            <option value="off">
-                                Off
-                            </option>
-                            <option value="on">
-                                On
-                            </option>
-                        </select>
-                    </div>
-                </div>
+            <div class="ui-grid-b">
                 <div class="ui-block-a">
                     <div data-role="fieldcontain" data-controltype="selectmenu">
-                        <h4 for="selectmenu3">
-                            Pais
-                        </h4>
-                        <select id="selectmenu3">
-                            <option value="option1">
-                                Selección
-                            </option>
-                        </select>
-                    </div>
-                </div>
-                <div class="ui-block-b">
-                    <div data-role="fieldcontain" data-controltype="selectmenu">
-                        <h4 for="selectmenu4">
-                            Depto/Ciudad
-                        </h4>
+                        <label for="selectmenu4">
+                            País:
+                        </label>
                         <select id="selectmenu4">
-                            <option value="Seleccionar">
-                                Selección
+                            <option value="option1">
+                                Option 1
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ui-block-b">
+                    <div data-role="fieldcontain" data-controltype="selectmenu">
+                        <label for="selectmenu7">
+                            Departamento:
+                        </label>
+                        <select id="selectmenu7">
+                            <option value="option1">
+                                Option 1
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ui-block-c">
+                    <div data-role="fieldcontain" data-controltype="selectmenu">
+                        <label for="selectmenu8">
+                            Ciudad:
+                        </label>
+                        <select id="selectmenu8">
+                            <option value="option1">
+                                Option 1
                             </option>
                         </select>
                     </div>
@@ -530,10 +432,11 @@
         </div>
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
-                <ul>
-                    <li><a href="#lista" data-icon="bars">Lista</a></li>
-                    <li><a href="#calendario" data-icon="calendar">Calendario</a></li>
-                    <li><a href="#ubicacion" data-icon="location">Ubicación</a></li>
+                <ul class="ui-nodisc-icon">
+                    <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
+                    <li><a href="#lista" data-icon="bars" class="ui-alt-icon">Lista</a></li>
+                    <li><a href="#calendario" data-icon="calendar" class="ui-alt-icon">Calendario</a></li>
+                    <li><a href="#ubicacion" data-icon="location" class="ui-alt-icon ui-btn-active">Ubicación</a></li>
                 </ul>
             </div>
         </div>
@@ -554,102 +457,6 @@
             </ul>
         </div>
         <!--/NavPanel-->
-        <!--UserPanel-->
-        <div data-role="panel" id="userpanel" data-position="right" data-display="overlay" data-theme="b">
-            <ul data-role="listview" data-position="fixed">
-                <li data-icon="delete"><a href="#" data-rel="close">Cerrar</a></li>
-                <li data-role="list-divider">Preferencias</li>
-            </ul>
-            <div id="checkboxes1" data-role="fieldcontain" data-controltype="checkboxes">
-                <fieldset data-role="controlgroup" data-type="vertical">
-                    <h4>
-                        Intereses:
-                    </h4>
-                    <input name="Aprende y crece" id="checkbox1" type="checkbox">
-                    <label for="checkbox1">
-                        Aprende y crece
-                    </label>
-                    <input name="Des" id="checkbox3" type="checkbox">
-                    <label for="checkbox3">
-                        Descubre y trabaja
-                    </label>
-                    <input name="Informate" id="checkbox4" type="checkbox">
-                    <label for="checkbox4">
-                        Informate
-                    </label>
-                    <input id="checkbox5" type="checkbox">
-                    <label for="checkbox5">
-                        Diviertete
-                    </label>
-                    <input id="checkbox6" type="checkbox">
-                    <label for="checkbox6">
-                        Involucrate
-                    </label>
-                    <input id="checkbox7" type="checkbox">
-                    <label for="checkbox7">
-                        Desarrolla
-                    </label>
-                </fieldset>
-            </div>
-            <div data-role="fieldcontain" data-controltype="slider">
-                <h4 for="slider1">
-                    Edad:
-                </h4>
-                <input name="slider" id="slider1" type="range" min="14" max="38" value="14" data-highlight="true">
-            </div>
-            <div class="ui-grid-a">
-                <div class="ui-block-a">
-                    <h3>
-                        Ubicación
-                    </h3>
-                </div>
-                <div class="ui-block-b">
-                    <div data-role="fieldcontain" data-controltype="toggleswitch">
-                        <select name="toggleswitch2" id="toggleswitch2" data-role="slider" data-theme="">
-                            <option value="off">
-                                Off
-                            </option>
-                            <option value="on">
-                                On
-                            </option>
-                        </select>
-                    </div>
-                </div>
-                <div class="ui-block-a">
-                    <div data-role="fieldcontain" data-controltype="selectmenu">
-                        <h4 for="selectmenu3">
-                            Pais
-                        </h4>
-                        <select id="selectmenu3">
-                            <option value="option1">
-                                Selección
-                            </option>
-                        </select>
-                    </div>
-                </div>
-                <div class="ui-block-b">
-                    <div data-role="fieldcontain" data-controltype="selectmenu">
-                        <h4 for="selectmenu4">
-                            Depto/Ciudad
-                        </h4>
-                        <select id="selectmenu4">
-                            <option value="Seleccionar">
-                                Selección
-                            </option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="ui-grid-a">
-                <div class="ui-block-a">
-                    <input type="submit" value="Cancelar" style="background-color:red">
-                </div>
-                <div class="ui-block-b">
-                    <input type="submit" value="Guardar" style="background-color:green">
-                </div>
-            </div>
-        </div>
-        <!--/UserPanel-->
     </div>
 
     <!-- Panel Lateral -->
