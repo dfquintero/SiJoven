@@ -1,0 +1,37 @@
+﻿
+.ui-icon-tou:after {
+    background-image: url("img/menu/touching.png");
+    background-size: 20px 20px;
+    background-color:transparent;
+}
+.ui-icon-1edu:after {
+    background-image: url("img/menu/1edu.png");
+    background-size: 20px 20px;
+    background-color:transparent;
+}
+.ui-icon-2emp:after {
+    background-image: url("img/menu/2emp.png");
+    background-size: 20px 20px;
+    background-color:transparent;
+}
+.ui-icon-3prev:after {
+    background-image: url("img/menu/3prev.png");
+    background-size: 20px 20px;
+    background-color:transparent;
+}
+.ui-icon-4rec:after {
+    background-image: url("img/menu/4rec.png");
+    background-size: 20px 20px;
+    background-color:transparent;
+}
+.ui-icon-5des:after {
+    background-image: url("img/menu/5des.png");
+    background-size: 20px 20px;
+    background-color:transparent;
+}
+.ui-icon-6tra:after {
+    background-image: url("img/menu/6tra.png");
+    background-size: 20px 20px;
+    background-color:transparent;
+}
+
