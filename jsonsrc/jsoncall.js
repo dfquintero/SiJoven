@@ -17,22 +17,27 @@ function sortByKey(array, key) {
     });
 }
 
+
+
+
 $.ajax({
 
     dataType: "json",
-    url: 'http://poi.colombiajoven.gov.co/api/oferta',
+    url:'ofertasServicio.json',
+   // url: 'http://poi.colombiajoven.gov.co/api/oferta',
 }).done(function (data) {
     var items = [];
    
-    var info = sortByKey(data, 'OPORTUNIDAD');
-    console.log("sort")
-    $.each(info, function (key, val) {
+    //var info = sortByKey(data, 'OPORTUNIDAD');
+    //console.log("sort")
+    $.each(data, function (key, val) {
 
-        var img = 'ico300.png';
+        var img = 'ico_300.png';
         console.log("each");
+        console.log(val.Seccion);
         switch (val.Seccion) {
 
-            case 'Aprende y crece': img = '1ico_edu.png';
+            case 'Aprende y Crece': img = '1ico_edu.png';
                 break;
             case 'Descubre y trabaja': img = '2ico_emp.png';
                 break;
@@ -47,12 +52,12 @@ $.ajax({
 
 
         }
-
-        if (val.OPORTUNIDAD.length > 0) {
+        console.log(val.Oportunidad);
+        if (val.Oportunidad.length > 0) {
             console.log("push");
-            items.push("<li ><a href='#" + val.PkOferta + "_' value =" + val.PkOferta + " data-rel='popup' ><img src='img/menu/" + img + "' style='margin:10px; height: 60px; width: 60px;' /> <h1>" + val.OPORTUNIDAD + "</h1> <p>" + val.EntidadNombre + " - " + val.PoblacionObjetivo + " </p></a></li>");
+            items.push("<li ><a href='#" + val.PkOferta + "_' value =" + val.PkOferta + " data-rel='popup' ><img src='img/ico/" + img + "' style='margin:10px; height: 60px; width: 60px;' /> <h1>" + val.Oportunidad + "</h1> <p>" + val.EntidadNombre + " - " + val.PoblacionObjetivo + " </p></a></li>");
 
-            items.push(" <div data-role='popup' id='" + val.ID + "_'>");
+            items.push(" <div data-role='popup' id='" + val.PkOferta + "_'>");
             items.push("<center>");
             items.push("<div data-role='header'>");
             items.push(" <div data-role='navbar'>");
@@ -66,16 +71,16 @@ $.ajax({
             items.push(" </div>");
             items.push(" <div data-role='content' id='popUpContent'>");
             items.push(" <center>");
-            items.push(" <img src='img/menu/" + img + "' style=' max-height:80px' />");
+            items.push(" <img src='img/ico/" + img + "' style=' max-height:80px' />");
             items.push("</center>");
-            items.push("<h2 style='text-align:center; text-overflow: ellipsis;width: 200px;'>" + val.OPORTUNIDAD + "</h2>");
+            items.push("<h2 style='text-align:center; text-overflow: ellipsis;width: 200px;'>" + val.Oportunidad + "</h2>");
             items.push("<p  style='text-align:justify; text-overflow: ellipsis; width: 200px; '>" + val.Informacion + "</p>");
             items.push("</div>");
             items.push("<div data-role='footer'>");
             items.push("<div class='ui-grid-a'>");
             items.push("<div class='ui-block-a' style='text-align: center; background-color:#55ACEE '>");
             var twurl = "https://twitter.com/intent/tweet?text=";
-            items.push("<a href='" + twurl + val.OPORTUNIDAD + " " + val.URL + "' target='_blank'><img src='img/RS/twitter.png' style='max-height: 20px; padding: 5px; margin: 5px 5px;' /></a>");
+            items.push("<a href='" + twurl + val.Oportunidad + " " + val.UrlFuente + "' target='_blank'><img src='img/RS/twitter.png' style='max-height: 20px; padding: 5px; margin: 5px 5px;' /></a>");
             items.push("</div>");
             items.push("<div class='ui-block-b' style='text-align: center; background-color: #3b5998'>");
 

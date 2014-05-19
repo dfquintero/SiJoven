@@ -8,6 +8,9 @@
     <link href="Jquery/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.css" rel="stylesheet" />
 
     <title>SiJoven</title>
+    <style>
+      
+    </style>
 </head>
 <body>
     <!--Menu Inicio-->
@@ -18,6 +21,9 @@
                 </center>
             <a class="ui-btn-right ui-btn ui-shadow ui-corner-all ui-icon-gear ui-btn-icon-top ui-alt-icon" href="#userpanel">Mi Sí Joven</a>            
         </div>
+
+        <script src="jsonsrc/jsonCount.js"></script>
+
         <div data-role="content" id="seccionContent">
             <ul data-role="listview" data-inset="true" id="seccionContent" data-theme="b" class="ui-nodisc-icon">
                 <li data-role="list-divider">
@@ -26,11 +32,11 @@
                     </h1>
                 </li>
                 <li>
-                    <a href="#lista">
+                    <a href="#UserLista">
                         <img src="img/ico/user.png" />
                         <h2>Mi Sí Joven</h2>
                         <p>Opciones Personalizadas</p>
-                        <span id="seccionAll" class="ui-li-count">...</span>
+                        <span id="seccionUser" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
@@ -42,55 +48,55 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#Edu">
                         <img src="img/ico/1ico_edu.png" />
                         <h2>Aprende y Crece</h2>
                         <p>Educación y Becas</p>
-                        <span id="seccionAll" class="ui-li-count">...</span>
+                        <span id="seccionEdu" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#Emp">
                         <img src="img/ico/2ico_emp.png" />
                         <h2>Descubre y Trabaja</h2>
                         <p>Empleo y emprendimiento</p>
-                        <span id="seccionAll" class="ui-li-count">...</span>
+                        <span id="seccionEmp" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#Pre">
                         <img src="img/ico/3ico_pre.png" />
                         <h2>Cuídate y Denuncia</h2>
                         <p>Prevención e Información</p>
-                        <span id="seccionAll" class="ui-li-count">...</span>
+                        <span id="seccionPre" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#Rec">
                         <img src="img/ico/4ico_rec.png" />
                         <h2>Diviértete y Disfruta</h2>
                         <p>Cultura y Recreación</p>
-                        <span id="seccionAll" class="ui-li-count">...</span>
+                        <span id="seccionRec" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#Vol">
                         <img src="img/ico/5ico_vol.png" />
                         <h2>Involúcrate y Ayuda</h2>
                         <p>Voluntariado</p>
-                        <span id="seccionAll" class="ui-li-count">...</span>
+                        <span id="seccionVol" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#Des">
                         <img src="img/ico/6ico_des.png" />
                         <h2>Anímate y Participa</h2>
                         <p>Desarrollo</p>
-                        <span id="seccionAll" class="ui-li-count">...</span>
+                        <span id="seccionDes" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#About">
                         <img src="img/ico/info.png" />
                         <h2>Acerca de</h2>
                         <p>Información Importante</p>
@@ -197,7 +203,6 @@
     <div data-role="page" id="lista">
         <!--Lista-->
         <div data-role="header" data-position="fixed">
-            <a class="ui-btn ui-shadow ui-corner-all ui-icon-bullets ui-btn-icon-notext" href="#navpanel"></a>
             <center>
                 <img width="50%" src="img/icon-sijoven.png" />
             </center>
@@ -458,22 +463,18 @@
         </div>
         <!--/NavPanel-->
     </div>
-
-
-    <!--Todo-->
+    
+    <!--Todo Lista-->
     <div data-role="page" id="todo">
-        <!--Lista-->
         <div data-role="header" data-position="fixed">
-            <a class="ui-btn ui-shadow ui-corner-all ui-icon-bullets ui-btn-icon-notext" href="#navpanel"></a>
             <center>
-                <img width="50%" src="img/icon-sijoven.png" />
+                <img width="55%" src="img/icon-sijoven.png" />
             </center>
         </div>
         <div data-role="content">
           
-            <div id="allContent" data-role="content">
+            <div id="allContent" data-role="content"></div>
 
-            </div>
             <script src="jsonsrc/jsoncall.js"></script>
 
         </div>
@@ -487,33 +488,34 @@
                 </ul>
             </div>
         </div>
-        <!--NavPanel-->
-        <div data-role="panel" id="navpanel" data-position="left" data-display="push">
-            <ul data-role="listview">
-                <li data-icon="delete"><a href="#" data-rel="close">Cerrar</a></li>
-                <li data-role="list-divider">Menú</li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-nosvg ui-icon-home ui-btn-icon-left " href="index.html">Volver al Inicio</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-tou ui-btn-icon-left" href="#eventos">Todo</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-1ico_edu ui-btn-icon-left" href="#educacion">Educación</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-2emp ui-btn-icon-left" href="#empleo">Empleo Y Emprendimiento</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-3prev ui-btn-icon-left" href="#prevencion">Prevención</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-4rec ui-btn-icon-left" href="#cultura">Recreación y Tiempo Libre</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-5des ui-btn-icon-left" href="#desarrollo">Desarrollo y Voluntariado</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-6tra ui-btn-icon-left" href="#tramites">Tramites</a></li>
-            </ul>
-        </div>
-        <!--/NavPanel-->
     </div>
 
+    <!--Aprende y Crece/Lista-->
+    <div data-role="page" id="todo">
+        <div data-role="header" data-position="fixed">
+            <center>
+                <img width="55%" src="img/icon-sijoven.png" />
+            </center>
+        </div>
+        <div data-role="content">
 
+            <div id="allContent" data-role="content"></div>
 
-    
+            <script src="jsonsrc/jsoncall.js"></script>
 
-    <!-- Panel Lateral -->
-    <!-- Usuario -->
-    <!-- Usuario -->
-    <!-- Navegación -->
-    <!-- Navegación -->
-    <!-- Panel Lateral -->
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul class="ui-nodisc-icon">
+                    <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
+                    <li><a href="#lista" data-icon="bars" class="ui-alt-icon ui-btn-active">Lista</a></li>
+                    <li><a href="#calendario" data-icon="calendar" class="ui-alt-icon">Calendario</a></li>
+                    <li><a href="#ubicacion" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--Aprende y Crece/Calendario-->
+
 </body>
 </html>
