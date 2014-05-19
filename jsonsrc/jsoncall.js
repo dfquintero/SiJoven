@@ -19,7 +19,6 @@ function sortByKey(array, key) {
 
 
 
-
 $.ajax({
 
     dataType: "json",
@@ -100,7 +99,7 @@ $.ajax({
     });
     var container = document.getElementById("allContent")
     $("<ul/>", {
-        "id": "eventList", "data-role": "listview", "data-inset": "true", "data-autodividers": "true", "data-filter": "true",
+        "id": "eventList", "data-role": "listview", "data-inset": "true", "data-filter": "true",
         html: items.join("")
     }).appendTo(container);
 });
