@@ -6,94 +6,100 @@
     <script src="Jquery/jquery-2.1.0.min.js"></script>
     <script src="Jquery/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.js"></script>
     <link href="Jquery/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.css" rel="stylesheet" />
+    <script src="jsonsrc/jsoncall.js" type="text/javascript"></script>
+    <script src="jsonsrc/jsonCount.js" type="text/javascript"></script>
 
     <title>SiJoven</title>
     <style>
-      
+        ui-popup-screen.in, .ui-popup-screen {
+            background-color: #808080 !important;
+            background-image: none !important;
+            opacity: 0.9 !important;
+        }
     </style>
 </head>
 <body>
     <!--Menu Inicio-->
     <div data-role="page" id="inicio">
         <div data-role="header" data-position="fixed">
-                <center>
-                    <img width="50%" src="img/icon-sijoven.png" />
-                </center>
-            <a class="ui-btn-right ui-btn ui-shadow ui-corner-all ui-icon-gear ui-btn-icon-top ui-alt-icon" href="#userpanel">Mi Sí Joven</a>            
+            <center>
+                <img width="55%" src="img/icon-sijoven.png" />
+            </center>
+            <a class="ui-btn-right ui-btn ui-shadow ui-corner-all ui-icon-gear ui-btn-icon-top ui-alt-icon" href="#userpanel">Mi Sí Joven</a>
         </div>
         <div data-role="content" id="seccionContent">
-            <ul data-role="listview" data-inset="true" id="seccionContent" data-theme="b" class="ui-nodisc-icon">
+            <ul data-role="listview" data-inset="true" id="seccionContent" class="ui-nodisc-icon ui-alt-icon">
                 <li data-role="list-divider">
                     <h1>
                         ¿Que estas buscado hoy?
                     </h1>
                 </li>
                 <li>
-                    <a href="#lista">
+                    <a href="#ListaUser">
                         <img src="img/ico/user.png" />
                         <h2>Mi Sí Joven</h2>
                         <p>Opciones Personalizadas</p>
-                        <span id="seccionAll" class="ui-li-count">...</span>
+                        <span id="CountUser" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#todo">
+                    <a href="#ListaAll">
                         <img src="img/ico/ico_300.png" />
                         <h2>Todo</h2>
                         <p>Todas las actividades</p>
-                        <span id="seccionAll" class="ui-li-count">...</span>
+                        <span id="CountAll" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#ListaEdu">
                         <img src="img/ico/1ico_edu.png" />
                         <h2>Aprende y Crece</h2>
                         <p>Educación y Becas</p>
-                        <span id="seccionAll" class="ui-li-count">...</span>
+                        <span id="CountEdu" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#ListaEmp">
                         <img src="img/ico/2ico_emp.png" />
                         <h2>Descubre y Trabaja</h2>
                         <p>Empleo y emprendimiento</p>
-                        <span id="seccionAll" class="ui-li-count">...</span>
+                        <span id="CountEmp" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#ListaPre">
                         <img src="img/ico/3ico_pre.png" />
                         <h2>Cuídate y Denuncia</h2>
                         <p>Prevención e Información</p>
-                        <span id="seccionAll" class="ui-li-count">...</span>
+                        <span id="CountPre" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#ListaRec">
                         <img src="img/ico/4ico_rec.png" />
                         <h2>Diviértete y Disfruta</h2>
                         <p>Cultura y Recreación</p>
-                        <span id="seccionAll" class="ui-li-count">...</span>
+                        <span id="CountRec" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#ListaVol">
                         <img src="img/ico/5ico_vol.png" />
                         <h2>Involúcrate y Ayuda</h2>
                         <p>Voluntariado</p>
-                        <span id="seccionAll" class="ui-li-count">...</span>
+                        <span id="CountVol" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#ListaDes">
                         <img src="img/ico/6ico_des.png" />
                         <h2>Anímate y Participa</h2>
                         <p>Desarrollo</p>
-                        <span id="seccionAll" class="ui-li-count">...</span>
+                        <span id="CountDes" class="ui-li-count">...</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#About">
                         <img src="img/ico/info.png" />
                         <h2>Acerca de</h2>
                         <p>Información Importante</p>
@@ -196,194 +202,7 @@
             </div>
         </div>
     </div>
-    <!--Pagina2/Lista-->
-    <div data-role="page" id="lista">
-        <!--Lista-->
-        <div data-role="header" data-position="fixed">
-            <a class="ui-btn ui-shadow ui-corner-all ui-icon-bullets ui-btn-icon-notext" href="#navpanel"></a>
-            <center>
-                <img width="50%" src="img/icon-sijoven.png" />
-            </center>
-        </div>
-        <div data-role="content">
-            <form class="ui-filterable">
-                <input id="filterBasic-input" data-type="search">
-            </form>
-            <ul data-role="listview" data-inset="true" class="ui-nodisc-icon ui-alt-icon" data-icon="plus">
-                <li>
-                    <a href="#">
-                        <img src="img/ico/1ico_edu.png" />
-                        <h2>Titulo</h2>
-                        <p>descripcion</p>
-                        <span id="seccionAll" class="ui-li-count">...</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="img/ico/2ico_emp.png" />
-                        <h2>Titulo</h2>
-                        <p>descripcion</p>
-                        <span id="seccionAll" class="ui-li-count">...</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="img/ico/3ico_pre.png" />
-                        <h2>Titulo</h2>
-                        <p>descripcion</p>
-                        <span id="seccionAll" class="ui-li-count">...</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="img/ico/4ico_rec.png" />
-                        <h2>Titulo</h2>
-                        <p>descripcion</p>
-                        <span id="seccionAll" class="ui-li-count">...</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="img/ico/4ico_rec.png" />
-                        <h2>Titulo</h2>
-                        <p>descripcion</p>
-                        <span id="seccionAll" class="ui-li-count">...</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="img/ico/4ico_rec.png" />
-                        <h2>Titulo</h2>
-                        <p>descripcion</p>
-                        <span id="seccionAll" class="ui-li-count">...</span>
-                    </a>
-                </li>
-            </ul>
 
-        </div>
-        <div data-role="footer" data-position="fixed">
-            <div data-role="navbar">
-                <ul class="ui-nodisc-icon">
-                    <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
-                    <li><a href="#lista" data-icon="bars" class="ui-alt-icon ui-btn-active">Lista</a></li>
-                    <li><a href="#calendario" data-icon="calendar" class="ui-alt-icon">Calendario</a></li>
-                    <li><a href="#ubicacion" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
-                </ul>
-            </div>
-        </div>
-        <!--NavPanel-->
-        <div data-role="panel" id="navpanel" data-position="left" data-display="push">
-            <ul data-role="listview">
-                <li data-icon="delete"><a href="#" data-rel="close">Cerrar</a></li>
-                <li data-role="list-divider">Menú</li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-nosvg ui-icon-home ui-btn-icon-left " href="index.html">Volver al Inicio</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-tou ui-btn-icon-left" href="#eventos">Todo</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-1ico_edu ui-btn-icon-left" href="#educacion">Educación</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-2emp ui-btn-icon-left" href="#empleo">Empleo Y Emprendimiento</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-3prev ui-btn-icon-left" href="#prevencion">Prevención</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-4rec ui-btn-icon-left" href="#cultura">Recreación y Tiempo Libre</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-5des ui-btn-icon-left" href="#desarrollo">Desarrollo y Voluntariado</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-6tra ui-btn-icon-left" href="#tramites">Tramites</a></li>
-            </ul>
-        </div>
-        <!--/NavPanel-->
-    </div>
-    <!--Pagina2/Calendario-->
-    <div data-role="page" id="calendario">
-        <!--Calendario-->
-        <div data-role="header" data-position="fixed">
-            <a class="ui-btn ui-shadow ui-corner-all ui-icon-bullets ui-btn-icon-notext" href="#navpanel"></a>
-            <center>
-                <img width="50%" src="img/icon-sijoven.png" />
-            </center>
-        </div>
-        <div data-role="content">
-            <div data-role="collapsible-set" class="ui-nodisc-icon ui-alt-icon">
-                <div data-role="collapsible" data-collapsed="true">
-                    <h3>
-                        Eventos Permanentes
-                    </h3>
-                    <ul data-role="listview" data-inset="false" data-divider-theme="b">
-                        <li>
-                            <a href="#">
-                                <img src="img/ico/1ico_edu.png" />
-                                <h2>Titulo</h2>
-                                <p>descripcion</p>
-                                <span id="seccionAll" class="ui-li-count">...</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="img/ico/2ico_emp.png" />
-                                <h2>Titulo</h2>
-                                <p>descripcion</p>
-                                <span id="seccionAll" class="ui-li-count">...</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="img/ico/3ico_pre.png" />
-                                <h2>Titulo</h2>
-                                <p>descripcion</p>
-                                <span id="seccionAll" class="ui-li-count">...</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="img/ico/4ico_rec.png" />
-                                <h2>Titulo</h2>
-                                <p>descripcion</p>
-                                <span id="seccionAll" class="ui-li-count">...</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="img/ico/4ico_rec.png" />
-                                <h2>Titulo</h2>
-                                <p>descripcion</p>
-                                <span id="seccionAll" class="ui-li-count">...</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="img/ico/4ico_rec.png" />
-                                <h2>Titulo</h2>
-                                <p>descripcion</p>
-                                <span id="seccionAll" class="ui-li-count">...</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div data-role="footer" data-position="fixed">
-            <div data-role="navbar">
-                <ul class="ui-nodisc-icon">
-                    <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
-                    <li><a href="#lista" data-icon="bars" class="ui-alt-icon">Lista</a></li>
-                    <li><a href="#calendario" data-icon="calendar" class="ui-alt-icon ui-btn-active">Calendario</a></li>
-                    <li><a href="#ubicacion" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
-                </ul>
-            </div>
-        </div>
-        <!--Panel Lateral-->
-        <!--NavPanel-->
-        <div data-role="panel" id="navpanel" data-position="left" data-display="push">
-            <ul data-role="listview">
-                <li data-icon="delete"><a href="#" data-rel="close">Cerrar</a></li>
-                <li data-role="list-divider">Menú</li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-nosvg ui-icon-home ui-btn-icon-left " href="index.html">Volver al Inicio</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-tou ui-btn-icon-left" href="#eventos">Todo</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-1ico_edu ui-btn-icon-left" href="#educacion">Educación</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-2emp ui-btn-icon-left" href="#empleo">Empleo Y Emprendimiento</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-3prev ui-btn-icon-left" href="#prevencion">Prevención</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-4rec ui-btn-icon-left" href="#cultura">Recreación y Tiempo Libre</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-5des ui-btn-icon-left" href="#desarrollo">Desarrollo y Voluntariado</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-6tra ui-btn-icon-left" href="#tramites">Tramites</a></li>
-            </ul>
-        </div>
-        <!--/NavPanel-->
-    </div>
     <!--Pagina2/Ubicacion-->
     <div data-role="page" id="ubicacion">
         <!--Ubicación-->
@@ -437,8 +256,8 @@
             <div data-role="navbar">
                 <ul class="ui-nodisc-icon">
                     <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
-                    <li><a href="#lista" data-icon="bars" class="ui-alt-icon">Lista</a></li>
-                    <li><a href="#calendario" data-icon="calendar" class="ui-alt-icon">Calendario</a></li>
+                    <li><a href="#Lista" data-icon="bars" class="ui-alt-icon">Lista</a></li>
+                    <li><a href="#Calendario" data-icon="calendar" class="ui-alt-icon">Calendario</a></li>
                     <li><a href="#ubicacion" data-icon="location" class="ui-alt-icon ui-btn-active">Ubicación</a></li>
                 </ul>
             </div>
@@ -462,61 +281,487 @@
         <!--/NavPanel-->
     </div>
 
-
-    <!--Todo-->
-    <div data-role="page" id="todo">
-        <!--Lista-->
+    <!--Todo(All)-->
+    <!--/Lista-->
+    <div data-role="page" id="ListaAll">
         <div data-role="header" data-position="fixed">
-            <a class="ui-btn ui-shadow ui-corner-all ui-icon-bullets ui-btn-icon-notext" href="#navpanel"></a>
             <center>
-                <img width="50%" src="img/icon-sijoven.png" />
+                <img width="55%" src="img/icon-sijoven.png" />
             </center>
         </div>
-      
-          
-            <div id="allContent" data-role="content">
+        <div id="ListaContentAll" data-role="content">
 
-            </div>
-            <script src="jsonsrc/jsoncall.js"></script>
-
-        
+        </div>
+        <script type="text/javascript">
+            allResults("ListaContentAll");
+        </script>
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
                 <ul class="ui-nodisc-icon">
                     <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
-                    <li><a href="#lista" data-icon="bars" class="ui-alt-icon ui-btn-active">Lista</a></li>
-                    <li><a href="#calendario" data-icon="calendar" class="ui-alt-icon">Calendario</a></li>
-                    <li><a href="#ubicacion" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                    <li><a href="#ListaAll" data-icon="bars" class="ui-alt-icon ui-btn-active">Lista</a></li>
+                    <li><a href="#CalendarioAll" data-icon="calendar" class="ui-alt-icon">Calendario</a></li>
+                    <li><a href="#UbicacionAll" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
                 </ul>
             </div>
         </div>
-        <!--NavPanel-->
-        <div data-role="panel" id="navpanel" data-position="left" data-display="push">
-            <ul data-role="listview">
-                <li data-icon="delete"><a href="#" data-rel="close">Cerrar</a></li>
-                <li data-role="list-divider">Menú</li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-nosvg ui-icon-home ui-btn-icon-left " href="index.html">Volver al Inicio</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-tou ui-btn-icon-left" href="#eventos">Todo</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-1ico_edu ui-btn-icon-left" href="#educacion">Educación</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-2emp ui-btn-icon-left" href="#empleo">Empleo Y Emprendimiento</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-3prev ui-btn-icon-left" href="#prevencion">Prevención</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-4rec ui-btn-icon-left" href="#cultura">Recreación y Tiempo Libre</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-5des ui-btn-icon-left" href="#desarrollo">Desarrollo y Voluntariado</a></li>
-                <li><a data-icon="false" data-transition="slidefade" class="ui-btn ui-shadow ui-corner-all ui-icon-6tra ui-btn-icon-left" href="#tramites">Tramites</a></li>
-            </ul>
+    </div>
+    <!--/Calendario-->
+    <div data-role="page" id="CalendarioAll">
+        <div data-role="header" data-position="fixed">
+            <center>
+                <img width="55%" src="img/icon-sijoven.png" />
+            </center>
         </div>
-        <!--/NavPanel-->
+        <div data-role="content">
+            <div data-role="collapsible-set" class="ui-nodisc-icon ui-alt-icon">
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>
+                        Eventos Permanentes
+                    </h3>
+                    <ul data-role="listview" data-inset="false" data-divider-theme="b">
+                        <li>
+                            Poner aca los eventos permanentes
+                        </li>
+                        <li>
+                            Poner aca los eventos permanentes
+                        </li>
+                        <li>
+                            Poner aca los eventos permanentes
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <h3>
+                Poner el Calendario
+            </h3>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul class="ui-nodisc-icon">
+                    <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
+                    <li><a href="#ListaAll" data-icon="bars" class="ui-alt-icon">Lista</a></li>
+                    <li><a href="#CalendarioAll" data-icon="calendar" class="ui-alt-icon ui-btn-active">Calendario</a></li>
+                    <li><a href="#ubicacionAll" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
 
+    <!--Aprende y Crece(Edu)-->
+    <!--/Lista-->
+    <div data-role="page" id="ListaEdu">
+        <div data-role="header" data-position="fixed">
+            <center>
+                <img width="55%" src="img/icon-sijoven.png" />
+            </center>
+        </div>
+        <div id="ListaContentEdu" data-role="content">
 
+        </div>
+        <script type="text/javascript">
+            filterResults("Aprende y Crece", "ListaContentEdu");
+        </script>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul class="ui-nodisc-icon">
+                    <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
+                    <li><a href="#ListaEdu" data-icon="bars" class="ui-alt-icon ui-btn-active">Lista</a></li>
+                    <li><a href="#CalendarioEdu" data-icon="calendar" class="ui-alt-icon">Calendario</a></li>
+                    <li><a href="#UbicacionEdu" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/Calendario-->
+    <div data-role="page" id="CalendarioEdu">
+        <div data-role="header" data-position="fixed">
+            <center>
+                <img width="55%" src="img/icon-sijoven.png" />
+            </center>
+        </div>
+        <div data-role="content">
+            <div data-role="collapsible-set" class="ui-nodisc-icon ui-alt-icon">
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>
+                        Eventos Permanentes
+                    </h3>
+                    <ul data-role="listview" data-inset="false" data-divider-theme="b">
+                        <li>
+                            Poner aca los eventos permanentes
+                        </li>
+                        <li>
+                            Poner aca los eventos permanentes
+                        </li>
+                        <li>
+                            Poner aca los eventos permanentes
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <h3>
+                Poner el Calendario
+            </h3>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul class="ui-nodisc-icon">
+                    <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
+                    <li><a href="#ListaEdu" data-icon="bars" class="ui-alt-icon">Lista</a></li>
+                    <li><a href="#CalendarioEdu" data-icon="calendar" class="ui-alt-icon ui-btn-active">Calendario</a></li>
+                    <li><a href="#ubicacionEdu" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-    
+    <!--Descubre y Trabaja(Emp)-->
+    <!--/Lista-->
+    <div data-role="page" id="ListaEmp">
+        <div data-role="header" data-position="fixed">
+            <center>
+                <img width="55%" src="img/icon-sijoven.png" />
+            </center>
+        </div>
+        <div id="ListaContentEmp" data-role="content">
 
-    <!-- Panel Lateral -->
-    <!-- Usuario -->
-    <!-- Usuario -->
-    <!-- Navegación -->
-    <!-- Navegación -->
-    <!-- Panel Lateral -->
+        </div>
+        <script type="text/javascript">
+            filterResults("Descubre y Trabaja", "ListaContentEmp");
+        </script>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul class="ui-nodisc-icon">
+                    <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
+                    <li><a href="#ListaEmp" data-icon="bars" class="ui-alt-icon ui-btn-active">Lista</a></li>
+                    <li><a href="#CalendarioEmp" data-icon="calendar" class="ui-alt-icon">Calendario</a></li>
+                    <li><a href="#UbicacionEmp" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/Calendario-->
+    <div data-role="page" id="CalendarioEmp">
+        <div data-role="header" data-position="fixed">
+            <center>
+                <img width="55%" src="img/icon-sijoven.png" />
+            </center>
+        </div>
+        <div data-role="content">
+            <div data-role="collapsible-set" class="ui-nodisc-icon ui-alt-icon">
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>
+                        Eventos Permanentes
+                    </h3>
+                    <ul data-role="listview" data-inset="false" data-divider-theme="b">
+                        <li>
+                            Poner aca los eventos permanentes
+                        </li>
+                        <li>
+                            Poner aca los eventos permanentes
+                        </li>
+                        <li>
+                            Poner aca los eventos permanentes
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <h3>
+                Poner el Calendario
+            </h3>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul class="ui-nodisc-icon">
+                    <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
+                    <li><a href="#ListaEmp" data-icon="bars" class="ui-alt-icon">Lista</a></li>
+                    <li><a href="#CalendarioEmp" data-icon="calendar" class="ui-alt-icon ui-btn-active">Calendario</a></li>
+                    <li><a href="#ubicacionEmp" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--Cuídate y Denuncia(Pre)-->
+    <!--/Lista-->
+    <div data-role="page" id="ListaPre">
+        <div data-role="header" data-position="fixed">
+            <center>
+                <img width="55%" src="img/icon-sijoven.png" />
+            </center>
+        </div>
+        <div id="ListaContentPre" data-role="content">
+
+        </div>
+        <script type="text/javascript">
+            filterResults("Cuídate y Denuncia", "ListaContentPre");
+        </script>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul class="ui-nodisc-icon">
+                    <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
+                    <li><a href="#ListaPre" data-icon="bars" class="ui-alt-icon ui-btn-active">Lista</a></li>
+                    <li><a href="#CalendarioPre" data-icon="calendar" class="ui-alt-icon">Calendario</a></li>
+                    <li><a href="#UbicacionPre" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/Calendario-->
+    <div data-role="page" id="CalendarioPre">
+        <div data-role="header" data-position="fixed">
+            <center>
+                <img width="55%" src="img/icon-sijoven.png" />
+            </center>
+        </div>
+        <div data-role="content">
+            <div data-role="collapsible-set" class="ui-nodisc-icon ui-alt-icon">
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>
+                        Eventos Permanentes
+                    </h3>
+                    <ul data-role="listview" data-inset="false" data-divider-theme="b">
+                        <li>
+                            Poner aca los eventos permanentes
+                        </li>
+                        <li>
+                            Poner aca los eventos permanentes
+                        </li>
+                        <li>
+                            Poner aca los eventos permanentes
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <h3>
+                Poner el Calendario
+            </h3>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul class="ui-nodisc-icon">
+                    <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
+                    <li><a href="#ListaAPre" data-icon="bars" class="ui-alt-icon">Lista</a></li>
+                    <li><a href="#CalendarioPre" data-icon="calendar" class="ui-alt-icon ui-btn-active">Calendario</a></li>
+                    <li><a href="#ubicacionPre" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--Diviértete y Disfruta(Rec)-->
+    <!--/Lista-->
+    <div data-role="page" id="ListaRec">
+        <div data-role="header" data-position="fixed">
+            <center>
+                <img width="55%" src="img/icon-sijoven.png" />
+            </center>
+        </div>
+        <div id="ListaContentRec" data-role="content">
+
+        </div>
+        <script type="text/javascript">
+            filterResults("Diviértete y Disfruta", "ListaContentRec");
+        </script>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul class="ui-nodisc-icon">
+                    <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
+                    <li><a href="#ListaRec" data-icon="bars" class="ui-alt-icon ui-btn-active">Lista</a></li>
+                    <li><a href="#CalendarioRec" data-icon="calendar" class="ui-alt-icon">Calendario</a></li>
+                    <li><a href="#UbicacionRec" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/Calendario-->
+    <div data-role="page" id="CalendarioRec">
+        <div data-role="header" data-position="fixed">
+            <center>
+                <img width="55%" src="img/icon-sijoven.png" />
+            </center>
+        </div>
+        <div data-role="content">
+            <div data-role="collapsible-set" class="ui-nodisc-icon ui-alt-icon">
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>
+                        Eventos Permanentes
+                    </h3>
+                    <ul data-role="listview" data-inset="false" data-divider-theme="b">
+                        <li>
+                            Poner aca los eventos permanentes
+                        </li>
+                        <li>
+                            Poner aca los eventos permanentes
+                        </li>
+                        <li>
+                            Poner aca los eventos permanentes
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <h3>
+                Poner el Calendario
+            </h3>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul class="ui-nodisc-icon">
+                    <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
+                    <li><a href="#ListaRec" data-icon="bars" class="ui-alt-icon">Lista</a></li>
+                    <li><a href="#CalendarioRec" data-icon="calendar" class="ui-alt-icon ui-btn-active">Calendario</a></li>
+                    <li><a href="#ubicacionRec" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--Involúcrate y Ayuda(Vol)-->
+    <!--/Lista-->
+    <div data-role="page" id="ListaVol">
+        <div data-role="header" data-position="fixed">
+            <center>
+                <img width="55%" src="img/icon-sijoven.png" />
+            </center>
+        </div>
+        <div id="ListaContentVol" data-role="content">
+
+        </div>
+        <script type="text/javascript">
+            filterResults("Involúcrate y Ayuda", "ListaContentVol");
+        </script>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul class="ui-nodisc-icon">
+                    <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
+                    <li><a href="#ListaVol" data-icon="bars" class="ui-alt-icon ui-btn-active">Lista</a></li>
+                    <li><a href="#CalendarioVol" data-icon="calendar" class="ui-alt-icon">Calendario</a></li>
+                    <li><a href="#UbicacionVol" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/Calendario-->
+    <div data-role="page" id="CalendarioVol">
+        <div data-role="header" data-position="fixed">
+            <center>
+                <img width="55%" src="img/icon-sijoven.png" />
+            </center>
+        </div>
+        <div data-role="content">
+            <div data-role="collapsible-set" class="ui-nodisc-icon ui-alt-icon">
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>
+                        Eventos Permanentes
+                    </h3>
+                    <ul data-role="listview" data-inset="false" data-divider-theme="b">
+                        <li>
+                            Poner aca los eventos permanentes
+                        </li>
+                        <li>
+                            Poner aca los eventos permanentes
+                        </li>
+                        <li>
+                            Poner aca los eventos permanentes
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <h3>
+                Poner el Calendario
+            </h3>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul class="ui-nodisc-icon">
+                    <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
+                    <li><a href="#ListaVol" data-icon="bars" class="ui-alt-icon">Lista</a></li>
+                    <li><a href="#CalendarioVol" data-icon="calendar" class="ui-alt-icon ui-btn-active">Calendario</a></li>
+                    <li><a href="#ubicacionVol" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--Anímate y Participa(Des)-->
+    <!--/Lista-->
+    <div data-role="page" id="ListaDes">
+        <div data-role="header" data-position="fixed">
+            <center>
+                <img width="55%" src="img/icon-sijoven.png" />
+            </center>
+        </div>
+        <div id="ListaContentDes" data-role="content">
+
+        </div>
+        <script type="text/javascript">
+            filterResults("Anímate y Participa", "ListaContentDes");
+        </script>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul class="ui-nodisc-icon">
+                    <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
+                    <li><a href="#ListaDes" data-icon="bars" class="ui-alt-icon ui-btn-active">Lista</a></li>
+                    <li><a href="#CalendarioDes" data-icon="calendar" class="ui-alt-icon">Calendario</a></li>
+                    <li><a href="#UbicacionDes" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/Calendario-->
+    <div data-role="page" id="CalendarioDes">
+        <div data-role="header" data-position="fixed">
+            <center>
+                <img width="55%" src="img/icon-sijoven.png" />
+            </center>
+        </div>
+        <div data-role="content">
+            <div data-role="collapsible-set" class="ui-nodisc-icon ui-alt-icon">
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>
+                        Eventos Permanentes
+                    </h3>
+                    <ul data-role="listview" data-inset="false" data-divider-theme="b">
+                        <li>
+                            Poner aca los eventos permanentes
+                        </li>
+                        <li>
+                            Poner aca los eventos permanentes
+                        </li>
+                        <li>
+                            Poner aca los eventos permanentes
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <h3>
+                Poner el Calendario
+            </h3>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul class="ui-nodisc-icon">
+                    <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
+                    <li><a href="#ListaDes" data-icon="bars" class="ui-alt-icon">Lista</a></li>
+                    <li><a href="#CalendarioDes" data-icon="calendar" class="ui-alt-icon ui-btn-active">Calendario</a></li>
+                    <li><a href="#ubicacionDes" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--About-->
+    <div data-role="page" id="About">
+        <div data-role="header" data-position="fixed" data-add-back-btn="true">
+            <h1>
+                About
+            </h1>
+        </div>
+        <div data-role="content">
+            <p>
+                Aqui va un Acerca de :p
+            </p>
+        </div>
+    </div>
 </body>
 </html>
