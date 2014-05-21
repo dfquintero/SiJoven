@@ -10,20 +10,20 @@
          
         var img = '/img/ico/ico_300.png'
 
-        switch (val.Seccion) {
+        switch (val.FkSeccion) {
             case '_***_': user++;
                 break;
-            case 'Aprende y Crece': edu++;
+            case '1': edu++;
                 break;
-            case 'Descubre y Trabaja': emp++;
+            case '2': emp++;
                 break;
-            case 'Cuídate y Denuncia': pre++;
+            case '3': pre++;
                 break;
-            case 'Diviértete y Disfruta': rec++;
+            case '4': rec++;
                 break;
-            case 'Involúcrate y Ayuda': vol++;
+            case '5': vol++;
                 break;
-            case 'Anímate y Participa': des++;
+            case '6': des++;
                 break;
         }
         all = edu + emp + pre + rec + vol + des;
