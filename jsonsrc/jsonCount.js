@@ -13,17 +13,17 @@
         switch (val.FkSeccion) {
             case '_***_': user++;
                 break;
-            case '1': edu++;
+            case 1 : edu++;
                 break;
-            case '2': emp++;
+            case 2: emp++;
                 break;
-            case '3': pre++;
+            case 3: pre++;
                 break;
-            case '4': rec++;
+            case 4: rec++;
                 break;
-            case '5': vol++;
+            case 5: vol++;
                 break;
-            case '6': des++;
+            case 6: des++;
                 break;
         }
         all = edu + emp + pre + rec + vol + des;
