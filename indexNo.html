@@ -2,13 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <script src="Jquery/jquery-2.1.0.min.js"></script>
     <script src="Jquery/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.js"></script>
     <link href="Jquery/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.css" rel="stylesheet" />
     <script src="jsonsrc/jsoncall.js" type="text/javascript"></script>
     <script src="jsonsrc/jsonCount.js" type="text/javascript"></script>
-    <script src="jsonsrc/jsonUbicacion.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            getDataFromSvc();
+        });
+    </script>
     <title>SiJoven</title>
     <style>
         ui-popup-screen.in, .ui-popup-screen {
@@ -16,10 +20,6 @@
             background-image: none !important;
             opacity: 0.9 !important;
         }
-
-        .hidden {
-    display:none;
-}
     </style>
 </head>
 <body>
@@ -117,137 +117,95 @@
                 <li data-icon="delete"><a href="#" data-rel="close">Cerrar</a></li>
                 <li data-role="list-divider">Preferencias</li>
             </ul>
-            <form>
-                <div id="checkboxes1" data-role="fieldcontain" data-controltype="checkboxes">
-                    <fieldset data-role="controlgroup" data-type="vertical">
-                        <h4>
-                            Intereses:
-                        </h4>
-                        <input name="Aprende y crece" id="checkbox1" type="checkbox">
-                        <label for="checkbox1">
-                            Aprende y Crece
-                        </label>
-                        <input name="Des" id="checkbox3" type="checkbox">
-                        <label for="checkbox3">
-                            Descubre y Trabaja
-                        </label>
-                        <input name="Informate" id="checkbox4" type="checkbox">
-                        <label for="checkbox4">
-                            Cuídate y Denuncia
-                        </label>
-                        <input id="checkbox5" type="checkbox">
-                        <label for="checkbox5">
-                            Diviértete y Disfruta
-                        </label>
-                        <input id="checkbox6" type="checkbox">
-                        <label for="checkbox6">
-                            Involúcrate y Ayuda
-                        </label>
-                        <input id="checkbox7" type="checkbox">
-                        <label for="checkbox7">
-                            Anímate y Participa
-                        </label>
-                    </fieldset>
-                </div>
-                <div data-role="fieldcontain" data-controltype="slider">
-                    <h4 for="slider1">
-                        Edad:
+            <div id="checkboxes1" data-role="fieldcontain" data-controltype="checkboxes">
+                <fieldset data-role="controlgroup" data-type="vertical">
+                    <h4>
+                        Intereses:
                     </h4>
-                    <input name="slider" id="slider1" type="range" min="14" max="38" value="14" data-highlight="true">
+                    <input name="Aprende y crece" id="checkbox1" type="checkbox">
+                    <label for="checkbox1">
+                        Aprende y Crece
+                    </label>
+                    <input name="Des" id="checkbox3" type="checkbox">
+                    <label for="checkbox3">
+                        Descubre y Trabaja
+                    </label>
+                    <input name="Informate" id="checkbox4" type="checkbox">
+                    <label for="checkbox4">
+                        Cuídate y Denuncia
+                    </label>
+                    <input id="checkbox5" type="checkbox">
+                    <label for="checkbox5">
+                        Diviértete y Disfruta
+                    </label>
+                    <input id="checkbox6" type="checkbox">
+                    <label for="checkbox6">
+                        Involúcrate y Ayuda
+                    </label>
+                    <input id="checkbox7" type="checkbox">
+                    <label for="checkbox7">
+                        Anímate y Participa
+                    </label>
+                </fieldset>
+            </div>
+            <div data-role="fieldcontain" data-controltype="slider">
+                <h4 for="slider1">
+                    Edad:
+                </h4>
+                <input name="slider" id="slider1" type="range" min="14" max="38" value="14" data-highlight="true">
+            </div>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <h4>
+                        Ubicación:
+                    </h4>
                 </div>
-                <div class="ui-grid-a">
-                    <div class="ui-block-a">
-                        <h4>
-                            Ubicación:
-                        </h4>
-                    </div>
-
-                  
-                    <div class="ui-block-b">
-                        <div data-role="fieldcontain" data-controltype="toggleswitch">
-                            <select name="slider" id="my-slider" data-role="slider">
-                                <option value="off" selected>Off</option>
-                                <option value="on">On</option>
-                            </select> 
-                        </div>
-                    </div>
-                </div>
-                <div id="show-me" class="hidden">
-                    <div data-role="fieldcontain" data-controltype="selectmenu">
-                        <label for="selectmenu4">
-                            País:
-                        </label>
-
-
-                        <select id="selectmenu4" data-mini="true">
-
-                            <option value="CO" selected>
-                                Colombia
+                <div class="ui-block-b">
+                    <div data-role="fieldcontain" data-controltype="toggleswitch">
+                        <select name="toggleswitch4" id="toggleswitch4" data-role="slider" data-theme=""
+                                data-mini="true">
+                            <option value="off">
+                                Off
                             </option>
-                            <option value="otros" >
-                                Exterior
+                            <option value="on">
+                                On
                             </option>
                         </select>
-
-
                     </div>
-
-                    <div id="LocationCo" >
-                        <div data-role="fieldcontain" data-controltype="selectmenu">
-                            <label for="selectmenu7">
-                                Depto.:
-                            </label>
-                            <div class="ui-select ui-mini">
-                                <div id="selectmenu7-button" class="ui-btn ui-icon-carat-d ui-btn-icon-right ui-corner-all ui-shadow">
-                                    <span>Seleccionar Depto</span>
-                                </div>
-                            </div>
-
-                            <script type="text/javascript">
-                                Departamentos();
-                            </script>
-                        </div>
-                        <div data-role="fieldcontain" data-controltype="selectmenu">
-                            <label for="selectmenu8">
-                                Ciudad:
-                            </label>
-                            <div class="ui-select ui-mini">
-                                <div id="selectmenu8-button" class="ui-btn ui-icon-carat-d ui-btn-icon-right ui-corner-all ui-shadow">
-                                    <span>Seleccionar Ciudad</span>
-                                </div>
-                            </div>
-
-                            <script type="text/javascript">
-                                Ciudades();
-                            </script>
-                        </div>
-                    </div>
-
                 </div>
-                <script type="text/javascript">
-                    $('#my-slider').change(function () {
-                        var myswitch = $(this);
-                        var show = myswitch[0].selectedIndex == 1 ? true : false;
-                        $('#show-me').toggle(show);
-                    });
-
-                    $('#selectmenu4').change(function () {
-                        var myswitch = $(this);
-                        var show = myswitch[0].selectedIndex == 0 ? true : false;
-                        $('#LocationCo').toggle(show);
-                    });
-
-                </script>
-
-
-
-                <div data-role="fieldcontain" data-controltype="selectmenu">
-                    <input type="button" id="saveXML" value="Guardar"/>
-                </div>
-            </form>
-           
-
-        </div>
+            </div>
+            <div data-role="fieldcontain" data-controltype="selectmenu">
+                <label for="selectmenu4">
+                    País:
+                </label>
+                <select id="selectmenu4" data-mini="true">
+                    <option value="option1">
+                        Option 1
+                    </option>
+                </select>
+            </div>
+            <div data-role="fieldcontain" data-controltype="selectmenu">
+                <label for="selectmenu7">
+                    Depto.:
+                </label>
+                <select id="selectmenu7" data-mini="true">
+                    <option value="option1">
+                        Option 1
+                    </option>
+                </select>
+            </div>
+            <div data-role="fieldcontain" data-controltype="selectmenu">
+                <label for="selectmenu8">
+                    Ciudad:
+                </label>
+                <select id="selectmenu8" data-mini="true">
+                    <option value="option1">
+                        Option 1
+                    </option>
+                </select>
+            </div>
+            
+            </div>
     </div>
 
     <!--Pagina2/Ubicacion-->
@@ -340,7 +298,27 @@
 
         </div>
         <script type="text/javascript">
-            allResults("ListaContentAll");
+
+            $(document).bind('pagechange', '#ListaAll', function () {
+                $('#ListaAll').ready(function () {
+                    allResults("ListaContentAll");
+                    $('.ui-page-active .ui-listview').listview('refresh');
+                    $('.ui-page-active :jqmData(role=content)').trigger('create');
+                    console.log("update layout ListaAll");
+                });
+                 
+            });
+
+            $(document).on("pageinit", "#ListaAll", function (event) {
+                allResults("ListaContentAll");
+                $('.ui-page-active .ui-listview').listview('refresh');
+                $('.ui-page-active :jqmData(role=content)').trigger('create');
+               
+                console.log("all results finish");
+
+            });
+
+
         </script>
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
@@ -406,9 +384,25 @@
         <div id="ListaContentEdu" data-role="content">
 
         </div>
+
         <script type="text/javascript">
-            filterResults(1, "ListaContentEdu");
+
+            //$(document).bind('pagechange', '#ListaEdu', function () {
+            //    $('.ui-page-active .ui-listview').listview('refresh');
+            //    $('.ui-page-active :jqmData(role=content)').trigger('create');
+            //    console.log("update layout ListaEmp");
+            //});
+
+            //$(document).on("pageinit", "#ListaEdu", function (event) {
+
+            //    filterResults(1, "ListaContentEdu");
+            //    console.log("all results finish");
+
+            //});
+
+
         </script>
+
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
                 <ul class="ui-nodisc-icon">
@@ -473,9 +467,25 @@
         <div id="ListaContentEmp" data-role="content">
 
         </div>
+
         <script type="text/javascript">
-            filterResults(2, "ListaContentEmp");
+
+            //$(document).bind('pagechange', '#ListaEmp', function () {
+            //    $('.ui-page-active .ui-listview').listview('refresh');
+            //    $('.ui-page-active :jqmData(role=content)').trigger('create');
+            //    console.log("update layout ListaEmp");
+            //});
+
+            //$(document).on("pageinit", "#ListaEmp", function (event) {
+
+            //    filterResults(2, "ListaContentEmp");
+            //    console.log("all results finish");
+
+            //});
+
+
         </script>
+
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
                 <ul class="ui-nodisc-icon">
@@ -541,7 +551,21 @@
 
         </div>
         <script type="text/javascript">
-            filterResults(3, "ListaContentPre");
+
+            //$(document).bind('pagechange', '#ListaPre', function () {
+            //    $('.ui-page-active .ui-listview').listview('refresh');
+            //    $('.ui-page-active :jqmData(role=content)').trigger('create');
+            //    console.log("update layout ListaPre");
+            //});
+
+            //$(document).on("pageinit", "#ListaPre", function (event) {
+
+            //    filterResults(3, "ListaContentPre");
+            //    console.log("all results finish");
+
+            //});
+
+
         </script>
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
@@ -608,7 +632,21 @@
 
         </div>
         <script type="text/javascript">
-            filterResults(4, "ListaContentRec");
+
+            //$(document).bind('pagechange', '#ListaRec', function () {
+            //    $('.ui-page-active .ui-listview').listview('refresh');
+            //    $('.ui-page-active :jqmData(role=content)').trigger('create');
+            //    console.log("update layout ListaRec");
+            //});
+
+            //$(document).on("pageinit", "#ListaRec", function (event) {
+
+            //    filterResults(4, "ListaContentRec");
+            //    console.log("all results finish");
+
+            //});
+
+
         </script>
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
@@ -675,7 +713,21 @@
 
         </div>
         <script type="text/javascript">
-            filterResults(5, "ListaContentVol");
+
+            //$(document).bind('pagechange', '#ListaVol', function () {
+            //    $('.ui-page-active .ui-listview').listview('refresh');
+            //    $('.ui-page-active :jqmData(role=content)').trigger('create');
+            //    console.log("update layout ListaVol");
+            //});
+
+            //$(document).on("pageinit", "#ListaVol", function (event) {
+
+            //    filterResults(5, "ListaContentVol");
+            //    console.log("all results finish");
+
+            //});
+
+
         </script>
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
@@ -742,7 +794,21 @@
 
         </div>
         <script type="text/javascript">
-            filterResults(6, "ListaContentDes");
+
+            //$(document).bind('pagechange', '#ListaVol', function () {
+            //    $('.ui-page-active .ui-listview').listview('refresh');
+            //    $('.ui-page-active :jqmData(role=content)').trigger('create');
+            //    console.log("update layout ListaVol");
+            //});
+
+            //$(document).on("pageinit", "#ListaDes", function (event) {
+
+            //    filterResults(6, "ListaContentDes");
+            //    console.log("all results finish");
+
+            //});
+
+
         </script>
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
@@ -810,7 +876,7 @@
                         Si Joven App Ver. 1.1
                     </h3>
                 </div>
-            </div>
+            </div>            
             <hr style="border: 0px currentColor; height: 2px; margin-top: 12px; margin-bottom: 12px; background-color: rgb(204, 204, 204);">
             <h5 style="text-align:center">
                 Autores
@@ -841,7 +907,7 @@
                 consumir recursos de su plan de datos.
             </h4>
             <div class="ui-grid-a">
-                <div class="ui-block-a">
+                <div class="ui-block-a">                    
                     <center>
                         <img src="img/About/gplv3-127x51.png" />
                     </center>
@@ -879,7 +945,7 @@
                 </div>
             </div>
             <hr style="border: 0px currentColor; height: 2px; margin-top: 12px; margin-bottom: 12px; background-color: rgb(204, 204, 204);">
-            <a data-role="button" href="#inicio" style="background-color:greenyellow; color:black;">
+            <a data-role="button" href="#inicio" style="background-color:greenyellow; color:black;" >
                 Volver
             </a>
 
