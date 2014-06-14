@@ -1,6 +1,7 @@
 ﻿$.ajax({
     dataType: "json",
-    url: 'http://poi.colombiajoven.gov.co/api/oferta',
+    //url: 'http://poi.colombiajoven.gov.co/api/oferta',
+    url: 'oferta2.json'
 }).done(function (data) {
    
     var info = [];

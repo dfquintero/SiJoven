@@ -1,0 +1,17 @@
+﻿{
+  "name": "Sí Joven 1.2",
+  "description": "aplicacion si joven",
+  "launch_path": "/",
+  "icons": {
+    "128": "/img/AppIcon/ico_128.png"
+  },
+  "permissions": {
+    "browser": {},
+    "embeded-apps": {}
+  },
+  "developer": {
+    "name": "Oportunity Team",
+    "url": "http://your-homepage-here.org"
+  },
+  "default_locale": "es"
+}

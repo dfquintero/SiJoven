@@ -1,0 +1,84 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+          "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>New Web Project</title>
+</head>
+<body>
+    <form id="myform" name="myform" action="#" method="get">
+        XML Document:<br />
+        <textarea id="showxml" name="showxml" rows="10" cols="40"></textarea>
+        <br /><br /><br />
+        Name: <input type="text" name="namefield" id="namefield" size="50" /><br />
+        Title: <input type="text" name="titlefield" id="titlefield" size="30" />
+        <br />
+        Phone: <input type="text" name="phonefield" id="phonefield" size="20" />
+        <br />
+        Email: <input type="text" name="emailfield" id="emailfield" size="20" />
+        <br />
+
+        <input type="button" value="add record"
+               onclick="addElement();document.myform.showxml.value='';
+display(xmldoc.documentElement);" />
+
+        <input type="button" value="delete last record"
+               onclick="deleteLastElement();document.myform.showxml.value='';
+display(xmldoc.documentElement);" />
+
+        <input type="button" value="redisplay XML document"
+               onclick="document.myform.showxml.value='';
+display(xmldoc.documentElement);" />
+    </form>
+    <script>
+        if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        }
+        else {// code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.open("GET", "page1.xml", false);
+        xmlhttp.send();
+        xmlDoc = xmlhttp.responseXML;
+        function addElement() {
+            var rootElement = document.documentElement;
+
+            var name = document.getElementById('namefield').value;
+            var title = document.getElementById('titlefield').value;
+            var phone = document.getElementById('phonefield').value;
+            var email = document.getElementById('emailfield').value;
+
+            /* create employee element*/
+            var newEmployee = document.createElement('employee');
+
+
+            /* create child elements and text values and append one by one */
+            var newName = document.createElement('name');
+            var newNameText = document.createTextNode(name);
+            newName.appendChild(newNameText);
+            newEmployee.appendChild(newName);
+
+            var newTitle = document.createElement('title');
+            var newTitleText = document.createTextNode(title);
+            newTitle.appendChild(newTitleText);
+            newEmployee.appendChild(newTitle);
+
+            var newPhone = document.createElement('phone');
+            var newPhoneText = document.createTextNode(phone);
+            newPhone.appendChild(newPhoneText);
+            newEmployee.appendChild(newPhone);
+
+            var newEmail = document.createElement('email');
+            var newEmailText = document.createTextNode(email);
+            newEmail.appendChild(newEmailText);
+            newEmployee.appendChild(newEmail);
+
+            /* append completed record to the document */
+            rootElement.appendChild(newEmployee);
+            xmlDoc.save("page1.xml")
+        }</script>
+
+
+
+</body>
+</html>

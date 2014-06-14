@@ -2,25 +2,38 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <script src="Jquery/jquery-2.1.0.min.js"></script>
     <script src="Jquery/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.js"></script>
     <link href="Jquery/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.css" rel="stylesheet" />
     <script src="jsonsrc/jsoncall.js" type="text/javascript"></script>
     <script src="jsonsrc/jsonCount.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            getDataFromSvc();
-        });
-    </script>
+    <script src="jsonsrc/jsonUbicacion.js"></script>
     <title>SiJoven</title>
     <style>
         ui-popup-screen.in, .ui-popup-screen {
-            background-color: #808080 !important;
+            background-color: #ffffff !important;
             background-image: none !important;
-            opacity: 0.9 !important;
+            opacity: 0.5 !important;
         }
+
+        .hidden {
+    display:none;
+}
     </style>
+    <!--ScriptCalendar-->
+    <script src="CALENDAR.js"></script>
+    <link href="CALENDAR.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $("#view-calendar").live('pageinit', function (event, ui) {
+            $("#calendar").jqmCalendar({
+                events: [{ "summary": "Test event", "begin": new Date("2013-02-05 00:00:00"), "end": new Date("2013-02-07 00:00:00") }, { "summary": "Test event", "begin": new Date(), "end": new Date() }, { "summary": "Test event", "begin": new Date(), "end": new Date() }],
+                months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                days: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+                startOfWeek: 0
+            });
+        })
+    </script>
 </head>
 <body>
     <!--Menu Inicio-->
@@ -117,93 +130,134 @@
                 <li data-icon="delete"><a href="#" data-rel="close">Cerrar</a></li>
                 <li data-role="list-divider">Preferencias</li>
             </ul>
-            <div id="checkboxes1" data-role="fieldcontain" data-controltype="checkboxes">
-                <fieldset data-role="controlgroup" data-type="vertical">
-                    <h4>
-                        Intereses:
-                    </h4>
-                    <input name="Aprende y crece" id="checkbox1" type="checkbox">
-                    <label for="checkbox1">
-                        Aprende y Crece
-                    </label>
-                    <input name="Des" id="checkbox3" type="checkbox">
-                    <label for="checkbox3">
-                        Descubre y Trabaja
-                    </label>
-                    <input name="Informate" id="checkbox4" type="checkbox">
-                    <label for="checkbox4">
-                        Cuídate y Denuncia
-                    </label>
-                    <input id="checkbox5" type="checkbox">
-                    <label for="checkbox5">
-                        Diviértete y Disfruta
-                    </label>
-                    <input id="checkbox6" type="checkbox">
-                    <label for="checkbox6">
-                        Involúcrate y Ayuda
-                    </label>
-                    <input id="checkbox7" type="checkbox">
-                    <label for="checkbox7">
-                        Anímate y Participa
-                    </label>
-                </fieldset>
-            </div>
-            <div data-role="fieldcontain" data-controltype="slider">
-                <h4 for="slider1">
-                    Edad:
-                </h4>
-                <input name="slider" id="slider1" type="range" min="14" max="38" value="14" data-highlight="true">
-            </div>
-            <div class="ui-grid-a">
-                <div class="ui-block-a">
-                    <h4>
-                        Ubicación:
-                    </h4>
+            <form>
+                <div id="checkboxes1" data-role="fieldcontain" data-controltype="checkboxes">
+                    <fieldset data-role="controlgroup" data-type="vertical">
+                        <h4>
+                            Intereses:
+                        </h4>
+                        <input name="Aprende y crece" id="checkbox1" type="checkbox">
+                        <label for="checkbox1">
+                            Aprende y Crece
+                        </label>
+                        <input name="Des" id="checkbox3" type="checkbox">
+                        <label for="checkbox3">
+                            Descubre y Trabaja
+                        </label>
+                        <input name="Informate" id="checkbox4" type="checkbox">
+                        <label for="checkbox4">
+                            Cuídate y Denuncia
+                        </label>
+                        <input id="checkbox5" type="checkbox">
+                        <label for="checkbox5">
+                            Diviértete y Disfruta
+                        </label>
+                        <input id="checkbox6" type="checkbox">
+                        <label for="checkbox6">
+                            Involúcrate y Ayuda
+                        </label>
+                        <input id="checkbox7" type="checkbox">
+                        <label for="checkbox7">
+                            Anímate y Participa
+                        </label>
+                    </fieldset>
                 </div>
-                <div class="ui-block-b">
-                    <div data-role="fieldcontain" data-controltype="toggleswitch">
-                        <select name="toggleswitch4" id="toggleswitch4" data-role="slider" data-theme=""
-                                data-mini="true">
-                            <option value="off">
-                                Off
-                            </option>
-                            <option value="on">
-                                On
-                            </option>
-                        </select>
+                <div data-role="fieldcontain" data-controltype="slider">
+                    <h4 for="slider1">
+                        Edad:
+                    </h4>
+                    <input name="slider" id="slider1" type="range" min="14" max="38" value="14" data-highlight="true">
+                </div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <h4>
+                            Ubicación:
+                        </h4>
+                    </div>
+
+
+                    <div class="ui-block-b">
+                        <div data-role="fieldcontain" data-controltype="toggleswitch">
+                            <select name="slider" id="my-slider" data-role="slider">
+                                <option value="off" selected>Off</option>
+                                <option value="on">On</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div data-role="fieldcontain" data-controltype="selectmenu">
-                <label for="selectmenu4">
-                    País:
-                </label>
-                <select id="selectmenu4" data-mini="true">
-                    <option value="option1">
-                        Option 1
-                    </option>
-                </select>
-            </div>
-            <div data-role="fieldcontain" data-controltype="selectmenu">
-                <label for="selectmenu7">
-                    Depto.:
-                </label>
-                <select id="selectmenu7" data-mini="true">
-                    <option value="option1">
-                        Option 1
-                    </option>
-                </select>
-            </div>
-            <div data-role="fieldcontain" data-controltype="selectmenu">
-                <label for="selectmenu8">
-                    Ciudad:
-                </label>
-                <select id="selectmenu8" data-mini="true">
-                    <option value="option1">
-                        Option 1
-                    </option>
-                </select>
-            </div>
+                <div id="show-me" class="hidden">
+                    <div data-role="fieldcontain" data-controltype="selectmenu">
+                        <label for="selectmenu4">
+                            País:
+                        </label>
+
+
+                        <select id="selectmenu4" data-mini="true">
+
+                            <option value="CO" selected>
+                                Colombia
+                            </option>
+                            <option value="otros">
+                                Exterior
+                            </option>
+                        </select>
+
+
+                    </div>
+
+                    <div id="LocationCo">
+                        <div data-role="fieldcontain" data-controltype="selectmenu">
+                            <label for="selectmenu7">
+                                Depto.:
+                            </label>
+                            <div class="ui-select ui-mini">
+                                <div id="selectmenu7-button" class="ui-btn ui-icon-carat-d ui-btn-icon-right ui-corner-all ui-shadow">
+                                    <span>Seleccionar Depto</span>
+                                </div>
+                            </div>
+
+                            <script type="text/javascript">
+                                Departamentos();
+                            </script>
+                        </div>
+                        <div data-role="fieldcontain" data-controltype="selectmenu">
+                            <label for="selectmenu8">
+                                Ciudad:
+                            </label>
+                            <div class="ui-select ui-mini">
+                                <div id="selectmenu8-button" class="ui-btn ui-icon-carat-d ui-btn-icon-right ui-corner-all ui-shadow">
+                                    <span>Seleccionar Ciudad</span>
+                                </div>
+                            </div>
+
+                            <script type="text/javascript">
+                                Ciudades();
+                            </script>
+                        </div>
+                    </div>
+
+                </div>
+                <script type="text/javascript">
+                    $('#my-slider').change(function () {
+                        var myswitch = $(this);
+                        var show = myswitch[0].selectedIndex == 1 ? true : false;
+                        $('#show-me').toggle(show);
+                    });
+
+                    $('#selectmenu4').change(function () {
+                        var myswitch = $(this);
+                        var show = myswitch[0].selectedIndex == 0 ? true : false;
+                        $('#LocationCo').toggle(show);
+                    });
+
+                </script>
+
+                <div data-role="fieldcontain" data-controltype="selectmenu">
+                    <input type="button" id="saveXML" value="Guardar" />
+                </div>
+            </form>
+
+
         </div>
     </div>
 
@@ -262,7 +316,7 @@
                     <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
                     <li><a href="#Lista" data-icon="bars" class="ui-alt-icon">Lista</a></li>
                     <li><a href="#Calendario" data-icon="calendar" class="ui-alt-icon">Calendario</a></li>
-                    <li><a href="#ubicacion" data-icon="location" class="ui-alt-icon ui-btn-active">Ubicación</a></li>
+                    <li><a href="#Ubicacion" data-icon="location" class="ui-alt-icon ui-btn-active">Ubicación</a></li>
                 </ul>
             </div>
         </div>
@@ -297,21 +351,7 @@
 
         </div>
         <script type="text/javascript">
-
-            $(document).bind('pagechange', '#ListaAll', function () {
-                $('.ui-page-active .ui-listview').listview('refresh');
-                $('.ui-page-active :jqmData(role=content)').trigger('create');
-                console.log("update layout ListaAll");
-            });
-
-            $(document).on("pageinit", "#ListaAll", function (event) {
-
-                allResults("ListaContentAll");
-                console.log("all results finish");
-
-            });
-
-
+            allResults("ListaContentAll");
         </script>
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
@@ -353,6 +393,7 @@
             <h3>
                 Poner el Calendario
             </h3>
+            <div id="calendar"></div>
         </div>
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
@@ -360,11 +401,34 @@
                     <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
                     <li><a href="#ListaAll" data-icon="bars" class="ui-alt-icon">Lista</a></li>
                     <li><a href="#CalendarioAll" data-icon="calendar" class="ui-alt-icon ui-btn-active">Calendario</a></li>
-                    <li><a href="#ubicacionAll" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                    <li><a href="#UbicacionAll" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
                 </ul>
             </div>
         </div>
     </div>
+    <!--/Ubicación-->
+    <div data-role="page" id="UbicacionAll">
+        <div data-role="header" data-position="fixed">
+            <center>
+                <img width="55%" src="img/icon-sijoven.png" />
+            </center>
+        </div>
+        <div data-role="content">
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul class="ui-nodisc-icon">
+                    <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
+                    <li><a href="#ListaAll" data-icon="bars" class="ui-alt-icon">Lista</a></li>
+                    <li><a href="#CalendarioAll" data-icon="calendar" class="ui-alt-icon">Calendario</a></li>
+                    <li><a href="#UbicacionAll" data-icon="location" class="ui-alt-icon ui-btn-active">Ubicación</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
 
     <!--Aprende y Crece(Edu)-->
     <!--/Lista-->
@@ -377,25 +441,9 @@
         <div id="ListaContentEdu" data-role="content">
 
         </div>
-
         <script type="text/javascript">
-
-            $(document).bind('pagechange', '#ListaEdu', function () {
-                $('.ui-page-active .ui-listview').listview('refresh');
-                $('.ui-page-active :jqmData(role=content)').trigger('create');
-                console.log("update layout ListaEmp");
-            });
-
-            $(document).on("pageinit", "#ListaEdu", function (event) {
-
-                filterResults(1, "ListaContentEdu");
-                console.log("all results finish");
-
-            });
-
-
+            filterResults(1, "ListaContentEdu");
         </script>
-
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
                 <ul class="ui-nodisc-icon">
@@ -443,7 +491,28 @@
                     <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
                     <li><a href="#ListaEdu" data-icon="bars" class="ui-alt-icon">Lista</a></li>
                     <li><a href="#CalendarioEdu" data-icon="calendar" class="ui-alt-icon ui-btn-active">Calendario</a></li>
-                    <li><a href="#ubicacionEdu" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                    <li><a href="#UbicacionEdu" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/Ubicación-->
+    <div data-role="page" id="UbicacionEdu">
+        <div data-role="header" data-position="fixed">
+            <center>
+                <img width="55%" src="img/icon-sijoven.png" />
+            </center>
+        </div>
+        <div data-role="content">
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul class="ui-nodisc-icon">
+                    <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
+                    <li><a href="#ListaEdu" data-icon="bars" class="ui-alt-icon">Lista</a></li>
+                    <li><a href="#CalendarioEdu" data-icon="calendar" class="ui-alt-icon">Calendario</a></li>
+                    <li><a href="#UbicacionEdu" data-icon="location" class="ui-alt-icon ui-btn-active">Ubicación</a></li>
                 </ul>
             </div>
         </div>
@@ -460,25 +529,9 @@
         <div id="ListaContentEmp" data-role="content">
 
         </div>
-
         <script type="text/javascript">
-
-            $(document).bind('pagechange', '#ListaEmp', function () {
-                $('.ui-page-active .ui-listview').listview('refresh');
-                $('.ui-page-active :jqmData(role=content)').trigger('create');
-                console.log("update layout ListaEmp");
-            });
-
-            $(document).on("pageinit", "#ListaEmp", function (event) {
-
-                filterResults(2, "ListaContentEmp");
-                console.log("all results finish");
-
-            });
-
-
+            filterResults(2, "ListaContentEmp");
         </script>
-
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
                 <ul class="ui-nodisc-icon">
@@ -526,7 +579,28 @@
                     <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
                     <li><a href="#ListaEmp" data-icon="bars" class="ui-alt-icon">Lista</a></li>
                     <li><a href="#CalendarioEmp" data-icon="calendar" class="ui-alt-icon ui-btn-active">Calendario</a></li>
-                    <li><a href="#ubicacionEmp" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                    <li><a href="#UbicacionEmp" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/Ubicación-->
+    <div data-role="page" id="UbicacionEmp">
+        <div data-role="header" data-position="fixed">
+            <center>
+                <img width="55%" src="img/icon-sijoven.png" />
+            </center>
+        </div>
+        <div data-role="content">
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul class="ui-nodisc-icon">
+                    <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
+                    <li><a href="#ListaEmp" data-icon="bars" class="ui-alt-icon">Lista</a></li>
+                    <li><a href="#CalendarioEmp" data-icon="calendar" class="ui-alt-icon">Calendario</a></li>
+                    <li><a href="#UbicacionEmp" data-icon="location" class="ui-alt-icon ui-btn-active">Ubicación</a></li>
                 </ul>
             </div>
         </div>
@@ -544,21 +618,7 @@
 
         </div>
         <script type="text/javascript">
-
-            $(document).bind('pagechange', '#ListaPre', function () {
-                $('.ui-page-active .ui-listview').listview('refresh');
-                $('.ui-page-active :jqmData(role=content)').trigger('create');
-                console.log("update layout ListaPre");
-            });
-
-            $(document).on("pageinit", "#ListaPre", function (event) {
-
-                filterResults(3, "ListaContentPre");
-                console.log("all results finish");
-
-            });
-
-
+            filterResults(3, "ListaContentPre");
         </script>
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
@@ -607,7 +667,28 @@
                     <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
                     <li><a href="#ListaAPre" data-icon="bars" class="ui-alt-icon">Lista</a></li>
                     <li><a href="#CalendarioPre" data-icon="calendar" class="ui-alt-icon ui-btn-active">Calendario</a></li>
-                    <li><a href="#ubicacionPre" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                    <li><a href="#UbicacionPre" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/Ubicación-->
+    <div data-role="page" id="UbicacionPre">
+        <div data-role="header" data-position="fixed">
+            <center>
+                <img width="55%" src="img/icon-sijoven.png" />
+            </center>
+        </div>
+        <div data-role="content">
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul class="ui-nodisc-icon">
+                    <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
+                    <li><a href="#ListaPre" data-icon="bars" class="ui-alt-icon">Lista</a></li>
+                    <li><a href="#CalendarioPre" data-icon="calendar" class="ui-alt-icon">Calendario</a></li>
+                    <li><a href="#UbicacionPre" data-icon="location" class="ui-alt-icon ui-btn-active">Ubicación</a></li>
                 </ul>
             </div>
         </div>
@@ -625,21 +706,7 @@
 
         </div>
         <script type="text/javascript">
-
-            $(document).bind('pagechange', '#ListaRec', function () {
-                $('.ui-page-active .ui-listview').listview('refresh');
-                $('.ui-page-active :jqmData(role=content)').trigger('create');
-                console.log("update layout ListaRec");
-            });
-
-            $(document).on("pageinit", "#ListaRec", function (event) {
-
-                filterResults(4, "ListaContentRec");
-                console.log("all results finish");
-
-            });
-
-
+            filterResults(4, "ListaContentRec");
         </script>
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
@@ -688,7 +755,28 @@
                     <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
                     <li><a href="#ListaRec" data-icon="bars" class="ui-alt-icon">Lista</a></li>
                     <li><a href="#CalendarioRec" data-icon="calendar" class="ui-alt-icon ui-btn-active">Calendario</a></li>
-                    <li><a href="#ubicacionRec" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                    <li><a href="#UbicacionRec" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/Ubicación-->
+    <div data-role="page" id="UbicacionRec">
+        <div data-role="header" data-position="fixed">
+            <center>
+                <img width="55%" src="img/icon-sijoven.png" />
+            </center>
+        </div>
+        <div data-role="content">
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul class="ui-nodisc-icon">
+                    <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
+                    <li><a href="#ListaRec" data-icon="bars" class="ui-alt-icon">Lista</a></li>
+                    <li><a href="#CalendarioRec" data-icon="calendar" class="ui-alt-icon">Calendario</a></li>
+                    <li><a href="#UbicacionRec" data-icon="location" class="ui-alt-icon ui-btn-active">Ubicación</a></li>
                 </ul>
             </div>
         </div>
@@ -706,21 +794,7 @@
 
         </div>
         <script type="text/javascript">
-
-            $(document).bind('pagechange', '#ListaVol', function () {
-                $('.ui-page-active .ui-listview').listview('refresh');
-                $('.ui-page-active :jqmData(role=content)').trigger('create');
-                console.log("update layout ListaVol");
-            });
-
-            $(document).on("pageinit", "#ListaVol", function (event) {
-
-                filterResults(5, "ListaContentVol");
-                console.log("all results finish");
-
-            });
-
-
+            filterResults(5, "ListaContentVol");
         </script>
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
@@ -769,7 +843,28 @@
                     <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
                     <li><a href="#ListaVol" data-icon="bars" class="ui-alt-icon">Lista</a></li>
                     <li><a href="#CalendarioVol" data-icon="calendar" class="ui-alt-icon ui-btn-active">Calendario</a></li>
-                    <li><a href="#ubicacionVol" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                    <li><a href="#UbicacionVol" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/Ubicación-->
+    <div data-role="page" id="UbicacionVol">
+        <div data-role="header" data-position="fixed">
+            <center>
+                <img width="55%" src="img/icon-sijoven.png" />
+            </center>
+        </div>
+        <div data-role="content">
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul class="ui-nodisc-icon">
+                    <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
+                    <li><a href="#ListaVol" data-icon="bars" class="ui-alt-icon">Lista</a></li>
+                    <li><a href="#CalendarioVol" data-icon="calendar" class="ui-alt-icon">Calendario</a></li>
+                    <li><a href="#UbicacionVol" data-icon="location" class="ui-alt-icon ui-btn-active">Ubicación</a></li>
                 </ul>
             </div>
         </div>
@@ -787,21 +882,7 @@
 
         </div>
         <script type="text/javascript">
-
-            $(document).bind('pagechange', '#ListaVol', function () {
-                $('.ui-page-active .ui-listview').listview('refresh');
-                $('.ui-page-active :jqmData(role=content)').trigger('create');
-                console.log("update layout ListaVol");
-            });
-
-            $(document).on("pageinit", "#ListaDes", function (event) {
-
-                filterResults(6, "ListaContentDes");
-                console.log("all results finish");
-
-            });
-
-
+            filterResults(6, "ListaContentDes");
         </script>
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
@@ -850,7 +931,28 @@
                     <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
                     <li><a href="#ListaDes" data-icon="bars" class="ui-alt-icon">Lista</a></li>
                     <li><a href="#CalendarioDes" data-icon="calendar" class="ui-alt-icon ui-btn-active">Calendario</a></li>
-                    <li><a href="#ubicacionDes" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                    <li><a href="#UbicacionDes" data-icon="location" class="ui-alt-icon">Ubicación</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/Ubicación-->
+    <div data-role="page" id="UbicacionDes">
+        <div data-role="header" data-position="fixed">
+            <center>
+                <img width="55%" src="img/icon-sijoven.png" />
+            </center>
+        </div>
+        <div data-role="content">
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul class="ui-nodisc-icon">
+                    <li><a href="#inicio" data-icon="carat-l" data-theme="b">Volver</a></li>
+                    <li><a href="#ListaDes" data-icon="bars" class="ui-alt-icon">Lista</a></li>
+                    <li><a href="#CalendarioDes" data-icon="calendar" class="ui-alt-icon">Calendario</a></li>
+                    <li><a href="#UbicacionDes" data-icon="location" class="ui-alt-icon ui-btn-active">Ubicación</a></li>
                 </ul>
             </div>
         </div>
@@ -869,7 +971,7 @@
                         Si Joven App Ver. 1.1
                     </h3>
                 </div>
-            </div>            
+            </div>
             <hr style="border: 0px currentColor; height: 2px; margin-top: 12px; margin-bottom: 12px; background-color: rgb(204, 204, 204);">
             <h5 style="text-align:center">
                 Autores
@@ -900,7 +1002,7 @@
                 consumir recursos de su plan de datos.
             </h4>
             <div class="ui-grid-a">
-                <div class="ui-block-a">                    
+                <div class="ui-block-a">
                     <center>
                         <img src="img/About/gplv3-127x51.png" />
                     </center>
@@ -938,7 +1040,7 @@
                 </div>
             </div>
             <hr style="border: 0px currentColor; height: 2px; margin-top: 12px; margin-bottom: 12px; background-color: rgb(204, 204, 204);">
-            <a data-role="button" href="#inicio" style="background-color:greenyellow; color:black;" >
+            <a data-role="button" href="#inicio" style="background-color:greenyellow; color:black;">
                 Volver
             </a>
 
@@ -946,4 +1048,5 @@
         </div>
     </div>
 </body>
+
 </html>
