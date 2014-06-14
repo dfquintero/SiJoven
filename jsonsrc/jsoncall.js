@@ -61,7 +61,7 @@ function filterResults(categoria, elemento) {
                    
                     items.push("<li ><a href='#" + elemento + "_" + val.PkOferta + "_' value =" + val.PkOferta + " data-rel='popup' ><img src='img/ico/" + img + "' style='margin:10px; height: 60px; width: 60px;' /> <h1>" + val.Oportunidad + "</h1> <p>" + val.EntidadNombre + " - " + val.PoblacionObjetivo + " </p></a></li>");
 
-                    items.push("<div data-role='popup' id='" + val.PkOferta + "_' data-theme='b' style='top: 5%; left: 5%; right: 5%; width: 90%; height: 90%; position: fixed; overflow-y:auto; overflow-x:hidden; background-color:rgba(0, 0, 0, 0.80);'>");
+                    items.push("<div data-role='popup' id='" + val.PkOferta + "_' data-theme='b' style='top: 5%; left: 5%; right: 5%; width: 90%; height: 90%; position: fixed; overflow-y:auto; overflow-x:hidden; background-color:rgba(0, 0, 0, 1);'>");
 
                     items.push("<center><img src='img/ico/" + img + "' style='max-width:25%; margin:5% 1px; ' /></center>");
 
